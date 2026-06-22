@@ -1,0 +1,6 @@
+{
+  "name": "Meu Processo Seletivo",
+  "description": "Landing page oficial do meuprocessoseletivo.com - Plataforma de recrutamento e seleção inteligente.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
