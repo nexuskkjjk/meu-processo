@@ -93,7 +93,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-white font-sans antialiased selection:bg-brand-orange-500/30 selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#0E0D14] text-white font-sans antialiased selection:bg-brand-orange-500/30 selection:text-white relative overflow-x-hidden">
       
       {/* Intro Overlay Screen with the Logo */}
       <AnimatePresence>
@@ -101,7 +101,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.7, ease: 'easeOut' } }}
-            className="fixed inset-0 bg-[#0B0C0E] z-50 flex flex-col items-center justify-center p-4 select-none overflow-hidden"
+            className="fixed inset-0 bg-[#0E0D14] z-50 flex flex-col items-center justify-center p-4 select-none overflow-hidden"
           >
             {/* Logo container area - oversized & perfectly centered */}
             <div className="relative flex items-center justify-center h-48 w-[400px] sm:w-[540px] md:w-[720px] overflow-visible">
@@ -151,35 +151,34 @@ export default function App() {
       </AnimatePresence>
 
       {/* Navigation Header */}
-      <header id="main-navigation-navbar" className="sticky top-0 z-40 w-full bg-[#0B0C0E] transition-colors duration-300">
+      <header id="main-navigation-navbar" className="sticky top-0 z-40 w-full bg-[#0E0D14] transition-colors duration-300">
         <div className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between relative">
           <Logo size="md" />
 
-          {/* Centered Desktop Nav Links */}
-          <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <nav className="flex items-center gap-10">
-              <a href="#solucoes" className="text-xs font-semibold text-brand-gray hover:text-white transition-colors">Soluções</a>
-              <a href="#recursos" className="text-xs font-semibold text-brand-gray hover:text-white transition-colors">Produtos</a>
-              <a href="#precos" className="text-xs font-semibold text-brand-gray hover:text-white transition-colors">Preços</a>
+          {/* Desktop Nav Links & Actions (Aligned Right) */}
+          <div className="hidden md:flex items-center gap-12">
+            <nav className="flex items-center gap-10 mr-6">
+              <a href="#solucoes" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
+              <a href="#recursos" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
+              <a href="#precos" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Preços</a>
             </nav>
-          </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-6">
-            <button 
-              type="button" 
-              onClick={() => setIsLoginModalOpen(true)}
-              className="text-xs font-semibold text-brand-gray hover:text-white transition-colors cursor-pointer"
-            >
-              Login
-            </button>
-            <button 
-              type="button"
-              onClick={() => setIsInterestModalOpen(true)}
-              className="bg-brand-gradient text-white text-xs font-bold py-2.5 px-5 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/10 active:scale-95 transition-all cursor-pointer"
-            >
-              Agendar demo
-            </button>
+            <div className="flex items-center gap-8">
+              <button 
+                type="button" 
+                onClick={() => setIsLoginModalOpen(true)}
+                className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors cursor-pointer"
+              >
+                Login
+              </button>
+              <button 
+                type="button"
+                onClick={() => setIsInterestModalOpen(true)}
+                className="bg-brand-gradient text-white text-[16px] font-bold py-3.5 px-7 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/15 active:scale-95 transition-all cursor-pointer"
+              >
+                Contate-nos
+              </button>
+            </div>
           </div>
 
           {/* Mobile hamburger menu toggle */}
@@ -200,25 +199,25 @@ export default function App() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden fixed inset-x-0 top-24 bg-[#0B0C0E]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
+            className="md:hidden fixed inset-x-0 top-24 bg-[#0E0D14]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
           >
-            <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold text-brand-gray hover:text-white transition-colors block py-1.5 w-full">Soluções</a>
-            <a href="#recursos" onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold text-brand-gray hover:text-white transition-colors block py-1.5 w-full">Produtos</a>
-            <a href="#precos" onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold text-brand-gray hover:text-white transition-colors block py-1.5 w-full">Preços</a>
+            <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Soluções</a>
+            <a href="#recursos" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
+            <a href="#precos" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Preços</a>
             <div className="w-full h-[1px] bg-white/5 my-2" />
             <button 
               type="button"
               onClick={() => { setIsLoginModalOpen(true); setMobileMenuOpen(false); }}
-              className="text-sm font-semibold text-brand-gray hover:text-white block py-1.5 w-full text-center cursor-pointer"
+              className="text-[18px] font-bold text-brand-gray hover:text-white block py-2 w-full text-center cursor-pointer"
             >
               Login
             </button>
             <button 
               type="button"
               onClick={() => { setIsInterestModalOpen(true); setMobileMenuOpen(false); }}
-              className="w-full bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-full hover:opacity-95 transition-all text-center cursor-pointer"
+              className="w-full bg-brand-gradient text-white text-[16px] font-bold py-3 rounded-full hover:opacity-95 transition-all text-center cursor-pointer"
             >
-              Agendar demo
+              Contate-nos
             </button>
           </motion.div>
         )}
@@ -250,7 +249,7 @@ export default function App() {
                 onClick={() => setIsInterestModalOpen(true)}
                 className="bg-brand-gradient text-white text-sm font-bold py-3.5 px-8 rounded-xl hover:shadow-xl hover:shadow-brand-orange-500/15 active:scale-98 transition-all flex items-center justify-center cursor-pointer text-center"
               >
-                Agendar uma demonstração
+                Começar agora
               </button>
             </div>
           </div>
@@ -699,7 +698,7 @@ export default function App() {
                       placeholder="exemplo@empresa.com"
                       value={interestEmail}
                       onChange={(e) => setInterestEmail(e.target.value)}
-                      className="w-full bg-[#0B0C0E] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
+                      className="w-full bg-[#0E0D14] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
                     />
                   </div>
 
@@ -769,7 +768,7 @@ export default function App() {
                       placeholder="exemplo@empresa.com"
                       value={loginEmail}
                       onChange={(e) => setLoginEmail(e.target.value)}
-                      className="w-full bg-[#0B0C0E] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
+                      className="w-full bg-[#0E0D14] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
                     />
                   </div>
 
@@ -781,7 +780,7 @@ export default function App() {
                       placeholder="••••••••"
                       value={loginPassword}
                       onChange={(e) => setLoginPassword(e.target.value)}
-                      className="w-full bg-[#0B0C0E] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
+                      className="w-full bg-[#0E0D14] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
                     />
                   </div>
 

@@ -335,7 +335,7 @@ export default function InteractiveDashboard() {
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-[#0B0C0E] border border-brand-orange-500/30 text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3"
+            className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-[#0E0D14] border border-brand-orange-500/30 text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3"
           >
             <div className="w-2.5 h-2.5 rounded-full bg-brand-orange-500 animate-ping" />
             <span className="text-xs font-semibold">{showToast}</span>

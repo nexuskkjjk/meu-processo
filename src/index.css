@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #0B0C0E;
+  --color-brand-dark: #0E0D14;
   --color-brand-card: #1A1A1F;
   --color-brand-gray: #A7A7AF;
   
@@ -33,7 +33,7 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0C0E;
+  background: #0E0D14;
 }
 ::-webkit-scrollbar-thumb {
   background: #2A2A33;
