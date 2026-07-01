@@ -156,25 +156,25 @@ export default function App() {
           <Logo size="md" />
 
           {/* Desktop Nav Links & Actions (Aligned Right) */}
-          <div className="hidden md:flex items-center gap-12">
-            <nav className="flex items-center gap-10 mr-6">
-              <a href="#solucoes" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
-              <a href="#recursos" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
-              <a href="#precos" className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors">Preços</a>
+          <div className="hidden md:flex items-center gap-14">
+            <nav className="flex items-center gap-12 mr-8">
+              <a href="#solucoes" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
+              <a href="#recursos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
+              <a href="#precos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Preços</a>
             </nav>
 
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-10">
               <button 
                 type="button" 
                 onClick={() => setIsLoginModalOpen(true)}
-                className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors cursor-pointer"
+                className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors cursor-pointer"
               >
                 Login
               </button>
               <button 
                 type="button"
                 onClick={() => setIsInterestModalOpen(true)}
-                className="bg-brand-gradient text-white text-[16px] font-bold py-3.5 px-7 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/15 active:scale-95 transition-all cursor-pointer"
+                className="bg-brand-gradient text-white text-[16px] font-bold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/15 active:scale-95 transition-all cursor-pointer"
               >
                 Contate-nos
               </button>
@@ -201,21 +201,21 @@ export default function App() {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden fixed inset-x-0 top-24 bg-[#0E0D14]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
           >
-            <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Soluções</a>
-            <a href="#recursos" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
-            <a href="#precos" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Preços</a>
+            <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Soluções</a>
+            <a href="#recursos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
+            <a href="#precos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Preços</a>
             <div className="w-full h-[1px] bg-white/5 my-2" />
             <button 
               type="button"
               onClick={() => { setIsLoginModalOpen(true); setMobileMenuOpen(false); }}
-              className="text-[18px] font-bold text-brand-gray hover:text-white block py-2 w-full text-center cursor-pointer"
+              className="text-[16px] font-bold text-brand-gray hover:text-white block py-2 w-full text-center cursor-pointer"
             >
               Login
             </button>
             <button 
               type="button"
               onClick={() => { setIsInterestModalOpen(true); setMobileMenuOpen(false); }}
-              className="w-full bg-brand-gradient text-white text-[16px] font-bold py-3 rounded-full hover:opacity-95 transition-all text-center cursor-pointer"
+              className="w-full bg-brand-gradient text-white text-[15px] font-bold py-2.5 rounded-full hover:opacity-95 transition-all text-center cursor-pointer"
             >
               Contate-nos
             </button>
@@ -227,7 +227,7 @@ export default function App() {
       <main className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-24 lg:space-y-36 pb-24">
 
         {/* HERO SECTION - Matching Image 1 split screen template */}
-        <section id="hero-sec" className="pt-12 lg:pt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <section id="hero-sec" className="min-h-[calc(100vh-96px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-4">
