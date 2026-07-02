@@ -224,30 +224,30 @@ export default function App() {
       </AnimatePresence>
 
       {/* Main Elements Scroll Grid */}
-      <main className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-24 lg:space-y-36 pb-24">
+      <main className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-36 lg:space-y-48 pb-24">
 
         {/* HERO SECTION - Matching Image 1 split screen template */}
-        <section id="hero-sec" className="min-h-[calc(100vh-96px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <section id="hero-sec" className="min-h-[calc(100vh-110px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center lg:mb-16">
           
-          <div className="lg:col-span-6 space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-tight lg:leading-[1.12] font-sans">
+          <div className="lg:col-span-6 space-y-10">
+            <div className="space-y-6">
+              <h1 className="text-[30px] xs:text-[36px] sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight text-white leading-tight lg:leading-[1.1] font-sans">
                 Contrate melhor.<br />
                 Mais rápido.<br />
-                <span className="text-white">Com menos esforço.</span>
+                <span className="text-white whitespace-nowrap">Com menos esforço.</span>
               </h1>
               
-              <p className="text-sm sm:text-base text-brand-gray max-w-lg leading-relaxed pt-2">
+              <p className="text-sm sm:text-base lg:text-[18px] text-brand-gray/90 max-w-xl leading-relaxed pt-2">
                 Automatize seu processo seletivo e encontre os melhores talentos para sua empresa.
               </p>
             </div>
 
             {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
               <button 
                 type="button"
                 onClick={() => setIsInterestModalOpen(true)}
-                className="bg-brand-gradient text-white text-sm font-bold py-3.5 px-8 rounded-xl hover:shadow-xl hover:shadow-brand-orange-500/15 active:scale-98 transition-all flex items-center justify-center cursor-pointer text-center"
+                className="bg-brand-gradient text-white text-base sm:text-lg font-bold py-4 px-10 rounded-2xl hover:shadow-2xl hover:shadow-brand-orange-500/25 hover:scale-[1.02] active:scale-98 transition-all flex items-center justify-center cursor-pointer text-center"
               >
                 Começar agora
               </button>
@@ -255,7 +255,7 @@ export default function App() {
           </div>
 
           {/* Custom PC Screen Dashboard Mockup */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 py-6">
             <DeviceMockup />
           </div>
         </section>
@@ -432,7 +432,7 @@ export default function App() {
                 onClick={() => setIsInterestModalOpen(true)}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
-                Agendar demonstração demo
+                Começar agora
               </button>
             </div>
 
@@ -489,7 +489,7 @@ export default function App() {
                 onClick={() => setIsInterestModalOpen(true)}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
-                Agendar demonstração demo
+                Começar agora
               </button>
             </div>
 
@@ -550,7 +550,7 @@ export default function App() {
                 onClick={() => setIsInterestModalOpen(true)}
                 className="w-full mt-6 bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/10 active:scale-98 transition-all text-center cursor-pointer"
               >
-                Agendar demonstração demo
+                Começar agora
               </button>
             </div>
 
@@ -607,7 +607,7 @@ export default function App() {
                 onClick={() => setIsInterestModalOpen(true)}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
-                Agendar demonstração demo
+                Contate-nos
               </button>
             </div>
           </div>
@@ -675,10 +675,10 @@ export default function App() {
               </button>
 
               <div className="space-y-4">
-                <div className="text-center">
+               <div className="text-center">
                   <Logo size="md" className="mx-auto mb-2" />
-                  <h3 className="text-base font-bold text-white">Demonstração demo</h3>
-                  <p className="text-[11px] text-brand-gray mt-1">Informe seu e-mail corporativo para simularmos e agendarmos o seu teste.</p>
+                  <h3 className="text-base font-bold text-white">Contate-nos</h3>
+                  <p className="text-[11px] text-brand-gray mt-1">Informe seu e-mail corporativo para entrarmos em contato.</p>
                 </div>
 
                 <form 
@@ -706,7 +706,7 @@ export default function App() {
                     type="submit"
                     className="w-full bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-xl hover:opacity-95 active:scale-98 transition-all cursor-pointer shadow-md mt-2"
                   >
-                    Confirmar agendamento demo
+                    Confirmar contato
                   </button>
                 </form>
               </div>
@@ -801,7 +801,7 @@ export default function App() {
       {showInterestToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#16161B] border border-green-500/30 text-white px-4.5 py-3 rounded-xl shadow-xl flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-semibold">Demonstração demo agendada com sucesso para: <strong className="text-brand-orange-400">{interestEmail || 'seu e-mail'}</strong>!</span>
+          <span className="text-xs font-semibold">Contato solicitado com sucesso para: <strong className="text-brand-orange-400">{interestEmail || 'seu e-mail'}</strong>!</span>
         </div>
       )}
 
