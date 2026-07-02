@@ -19,7 +19,6 @@ import {
   CalendarDays,
   ChevronDown
 } from 'lucide-react';
-import logoImg from '../3.png';
 
 // Define the shape of a job item in the live interactive mockup
 interface JobItem {
@@ -116,7 +115,7 @@ export default function DeviceMockup() {
         <div className="space-y-4">
           <div className="flex items-center select-none -ml-1 sm:-ml-1.5 px-1 py-1 gap-1 sm:gap-1.5">
             <img 
-              src={logoImg} 
+              src="/logo.png" 
               alt="Logo" 
               className="h-5 sm:h-7 w-auto object-contain shrink-0 relative z-0" 
             />

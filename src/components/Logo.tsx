@@ -1,5 +1,4 @@
 import React from 'react';
-import logoImg from '../3.png';
 
 interface LogoProps {
   className?: string;
@@ -34,7 +33,7 @@ export default function Logo({ className = '', size = 'md' }: LogoProps) {
   return (
     <div id="brand-logo-container" className={`flex items-center select-none ${appliedMargin} ${className}`}>
       <img 
-        src={logoImg} 
+        src="/logo.png" 
         alt="Logo" 
         referrerPolicy="no-referrer"
         className={`${iconHeightMap[size]} w-auto object-contain transition-transform duration-300 hover:scale-105 relative z-0`} 
