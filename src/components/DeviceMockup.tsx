@@ -109,18 +109,18 @@ export default function DeviceMockup() {
       {/* Background orange laser glow inside the frame */}
       <div className="absolute inset-0 -m-8 bg-brand-orange-500/[0.03] blur-[80px] rounded-full pointer-events-none" />
 
-      {/* 1. DARK SIDEBAR (Left side, 28% of square width) */}
-      <aside className="w-[28%] bg-[#0B0A11] border-r border-white/5 flex flex-col justify-between p-2.5 sm:p-4 text-[9px] sm:text-[11px] text-[#86858E] shrink-0 z-10">
+      {/* 1. DARK SIDEBAR (Left side, 31% of square width) */}
+      <aside className="w-[31%] bg-[#0B0A11] border-r border-white/5 flex flex-col justify-between p-2.5 sm:p-4 text-[9px] sm:text-[11px] text-[#86858E] shrink-0 z-10">
         
         {/* Brand Header */}
         <div className="space-y-4">
-          <div className="flex items-center select-none -ml-5 sm:-ml-7 lg:-ml-8.5 px-1 py-1">
+          <div className="flex items-center select-none -ml-3.5 sm:-ml-5 lg:-ml-5.5 px-1 py-1">
             <img 
               src={logoImg} 
               alt="Logo" 
-              className="h-8 sm:h-10 w-auto object-contain shrink-0 relative z-0" 
+              className="h-10 sm:h-13 w-auto object-contain shrink-0 relative z-0" 
             />
-            <span className="-ml-1 sm:-ml-1.5 lg:-ml-2 relative z-10 font-extrabold tracking-tight text-white leading-none font-sans text-[7px] xs:text-[8.5px] sm:text-[9.5px] md:text-[10px] flex items-center">
+            <span className="-ml-3.5 sm:-ml-4.5 lg:-ml-5 relative z-10 font-extrabold tracking-tight text-white leading-none font-sans text-[8.5px] xs:text-[10px] sm:text-[11.5px] md:text-[12px] flex items-center whitespace-nowrap">
               meuprocessoseletivo<span className="text-brand-orange-400">.com</span>
             </span>
           </div>
