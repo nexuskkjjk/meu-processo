@@ -9,34 +9,27 @@ interface LogoProps {
 export default function Logo({ className = '', size = 'md' }: LogoProps) {
   // Balanced middle-ground sizes: smaller than before, larger than original
   const iconHeightMap = {
-    sm: 'h-11 sm:h-12',
-    md: 'h-18 sm:h-20 md:h-22',
-    lg: 'h-28 sm:h-32 md:h-36',
+    sm: 'h-8 sm:h-9',
+    md: 'h-12 sm:h-14 md:h-15',
+    lg: 'h-20 sm:h-24 md:h-28',
   };
 
   const textHeightMap = {
-    sm: 'text-sm sm:text-base',
-    md: 'text-lg sm:text-[22px] md:text-[24px]',
-    lg: 'text-2xl sm:text-3xl md:text-4xl',
+    sm: 'text-base sm:text-lg',
+    md: 'text-xl sm:text-[24px] md:text-[26px]',
+    lg: 'text-3xl sm:text-4xl md:text-5xl',
   };
 
-  // Pulls the text inside the transparent padding of the image
+  // Positive gap/margin now because the new logo has NO transparent padding!
   const overlapMap = {
-    sm: '-ml-2 sm:-ml-3',
-    md: '-ml-7 sm:-ml-8 md:-ml-9',
-    lg: '-ml-11 sm:-ml-12 md:-ml-13',
+    sm: 'ml-2 sm:ml-2.5',
+    md: 'ml-3 sm:ml-3.5 md:ml-4',
+    lg: 'ml-4 sm:ml-5 md:ml-5.5',
   };
 
-  // Smart negative margin to pull the outer container slightly to the left.
-  // We keep this moderate so it doesn't shift too far to the left.
-  const isCentered = className.includes('mx-auto');
-  const containerMarginMap = {
-    sm: isCentered ? '' : '-ml-2 sm:-ml-3',
-    md: isCentered ? '' : '-ml-8 sm:-ml-10 md:-ml-12 lg:-ml-13',
-    lg: isCentered ? '' : '-ml-11 sm:-ml-13 md:-ml-15 lg:-ml-17',
-  };
-
-  const appliedMargin = containerMarginMap[size] || '';
+  // Since there is no longer any massive transparent padding, we do NOT need negative margins
+  // that pull the container out of screen boundary!
+  const appliedMargin = '';
 
   return (
     <div id="brand-logo-container" className={`flex items-center select-none ${appliedMargin} ${className}`}>

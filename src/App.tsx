@@ -46,26 +46,6 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // =========================================================================
-  // INTRO ANIMATION CONFIGURATION (CONFIGURAÇÃO DE DISTÂNCIA DA INTRODUÇÃO)
-  // =========================================================================
-  // Altere os números abaixo para aproximar ou afastar a logo e o texto:
-  // - Números mais próximos de zero deixam a logo e o texto mais perto um do outro.
-  // - Números maiores afastam a logo e o texto para os cantos da tela.
-  // - Para deslocar os dois juntos para a esquerda (centralizar o grupo), reduza ambos os valores.
-
-  const getLogoXOffset = () => {
-    if (windowWidth < 640) return -100;  // Mobile: Logo desloca-se mais para a esquerda para contrabalançar
-    if (windowWidth < 1024) return -190; // Tablet: Logo desloca-se mais para a esquerda
-    return -250;                         // Desktop: Logo desloca-se mais para a esquerda para contrabalançar o texto longo (Ajuste aqui!)
-  };
-
-  const getTextXOffset = () => {
-    if (windowWidth < 640) return 30;    // Mobile: Texto desloca-se menos para a direita, mantendo o mesmo espaçamento
-    if (windowWidth < 1024) return 40;   // Tablet: Texto desloca-se menos para a direita
-    return 50;                           // Desktop: Texto desloca-se menos para a direita para centralizar o grupo (Ajuste aqui!)
-  };
-
   React.useEffect(() => {
     const t1 = setTimeout(() => {
       setIntroPhase('text');
@@ -103,47 +83,47 @@ export default function App() {
             exit={{ opacity: 0, transition: { duration: 0.7, ease: 'easeOut' } }}
             className="fixed inset-0 bg-[#0E0D14] z-50 flex flex-col items-center justify-center p-4 select-none overflow-hidden"
           >
-            {/* Logo container area - oversized & perfectly centered */}
-            <div className="relative flex items-center justify-center h-48 w-[400px] sm:w-[540px] md:w-[720px] overflow-visible">
-              {/* Logo Symbol (Slides left) */}
+            {/* Logo container area - perfectly aligned side-by-side flex layout */}
+            <div className="relative flex items-center justify-center gap-4 sm:gap-5 md:gap-6 max-w-[95vw] overflow-visible">
+              {/* Logo Symbol (Left) */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.7, rotate: -30 }}
+                initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
                 animate={{ 
                   opacity: 1, 
                   scale: 1, 
                   rotate: 0,
-                  x: introPhase === 'icon' ? 0 : getLogoXOffset()
                 }}
                 transition={{ 
-                  duration: 1.3, 
-                  ease: [0.16, 1, 0.3, 1] // Majestic slow bezier
+                  duration: 1.2, 
+                  ease: [0.16, 1, 0.3, 1]
                 }}
-                className="z-20 relative flex items-center justify-center"
+                className="z-20 shrink-0 flex items-center justify-center"
               >
                 <img 
                   src={logoImg} 
                   alt="Logo Symbol" 
                   referrerPolicy="no-referrer"
-                  className="h-32 w-auto object-contain sm:h-44 dropdown-shadow-[0_10px_20px_rgba(255,138,0,0.15)]"
+                  className="h-12 w-auto object-contain sm:h-16 md:h-20 dropdown-shadow-[0_10px_20px_rgba(255,138,0,0.15)]"
                 />
               </motion.div>
 
-              {/* Logo Text (Reveals by sliding out to the right slowly with perfect spacing) */}
+              {/* Logo Text (Reveals next to it, on the Right) */}
               <motion.div
-                initial={{ opacity: 0, x: 0 }}
+                initial={{ opacity: 0, width: 0 }}
                 animate={{ 
                   opacity: introPhase !== 'icon' ? 1 : 0, 
-                  x: introPhase !== 'icon' ? getTextXOffset() : 0,
+                  width: introPhase !== 'icon' ? 'auto' : 0,
                 }}
                 transition={{ 
-                  duration: 1.4, 
-                  ease: [0.16, 1, 0.3, 1] // Elegant slow slide out
+                  duration: 1.2, 
+                  ease: [0.16, 1, 0.3, 1]
                 }}
-                className="absolute z-10 text-3xl sm:text-4xl md:text-[2.6rem] font-black tracking-tight text-white whitespace-nowrap pl-4 flex items-center gap-0.5"
-                style={{ pointerEvents: 'none' }}
+                className="z-10 text-2xl sm:text-3.5xl md:text-[2.4rem] font-black tracking-tight text-white whitespace-nowrap flex items-center overflow-hidden"
               >
-                meuprocessoseletivo
-                <span className="text-[#FF8A00]">.com</span>
+                <span className="flex items-center gap-0.5 pr-2">
+                  meuprocessoseletivo
+                  <span className="text-[#FF8A00]">.com</span>
+                </span>
               </motion.div>
             </div>
           </motion.div>
