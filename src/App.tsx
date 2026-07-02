@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import Logo from './components/Logo';
+import logoImg from './logo.png';
 import DeviceMockup from './components/DeviceMockup';
 import FeatureBento from './components/FeatureBento';
 import FAQAccordion from './components/FAQAccordion';
@@ -99,7 +100,7 @@ export default function App() {
                 className="z-20 shrink-0 flex items-center justify-center"
               >
                 <img 
-                  src="/logo.png" 
+                  src={logoImg} 
                   alt="Logo Symbol" 
                   referrerPolicy="no-referrer"
                   className="h-12 w-auto object-contain sm:h-16 md:h-20 dropdown-shadow-[0_10px_20px_rgba(255,138,0,0.15)]"
