@@ -8,22 +8,22 @@ interface LogoProps {
 export default function Logo({ className = '', size = 'md' }: LogoProps) {
   // Balanced middle-ground sizes: smaller than before, larger than original
   const iconHeightMap = {
-    sm: 'h-8 sm:h-9',
-    md: 'h-12 sm:h-14 md:h-15',
-    lg: 'h-20 sm:h-24 md:h-28',
+    sm: 'h-6 sm:h-7',
+    md: 'h-8 sm:h-9.5 md:h-10.5',
+    lg: 'h-14 sm:h-16 md:h-19',
   };
 
   const textHeightMap = {
-    sm: 'text-base sm:text-lg',
-    md: 'text-xl sm:text-[24px] md:text-[26px]',
-    lg: 'text-3xl sm:text-4xl md:text-5xl',
+    sm: 'text-sm sm:text-base',
+    md: 'text-base sm:text-[19px] md:text-[21px]',
+    lg: 'text-xl sm:text-2xl md:text-3xl',
   };
 
   // Positive gap/margin now because the new logo has NO transparent padding!
   const overlapMap = {
-    sm: 'ml-2 sm:ml-2.5',
-    md: 'ml-3 sm:ml-3.5 md:ml-4',
-    lg: 'ml-4 sm:ml-5 md:ml-5.5',
+    sm: 'ml-1.5 sm:ml-2',
+    md: 'ml-2 sm:ml-2.5 md:ml-3',
+    lg: 'ml-3 sm:ml-3.5 md:ml-4',
   };
 
   // Since there is no longer any massive transparent padding, we do NOT need negative margins

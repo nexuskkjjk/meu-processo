@@ -131,7 +131,7 @@ export default function App() {
 
       {/* Navigation Header */}
       <header id="main-navigation-navbar" className="sticky top-0 z-40 w-full bg-[#0E0D14] transition-colors duration-300">
-        <div className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 h-24 flex items-center justify-between relative">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 h-24 flex items-center justify-between relative">
           <Logo size="md" />
 
           {/* Desktop Nav Links & Actions (Aligned Right) */}
@@ -200,7 +200,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Main Elements Scroll Grid */}
-      <main className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 space-y-36 lg:space-y-48 pb-24">
+      <main className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 space-y-36 lg:space-y-48 pb-24">
 
         {/* HERO SECTION - Matching Image 1 split screen template */}
         <section id="hero-sec" className="min-h-[calc(100vh-110px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-center lg:mb-16">

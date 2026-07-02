@@ -103,7 +103,7 @@ export default function DeviceMockup() {
   return (
     <div 
       id="device-pc-mockup-frame" 
-      className="relative w-full aspect-[1.55] max-w-[720px] sm:max-w-[780px] lg:max-w-[850px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex transition-all duration-300 hover:shadow-brand-orange-500/10 hover:border-white/15"
+      className="relative w-full aspect-[1.55] max-w-[720px] sm:max-w-[840px] md:max-w-[940px] lg:max-w-[1040px] xl:max-w-[1150px] 2xl:max-w-[1250px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex transition-all duration-300 hover:shadow-brand-orange-500/10 hover:border-white/15"
     >
       {/* Background orange laser glow inside the frame */}
       <div className="absolute inset-0 -m-8 bg-brand-orange-500/[0.03] blur-[80px] rounded-full pointer-events-none" />
