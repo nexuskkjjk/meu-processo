@@ -19,6 +19,7 @@ import {
   CalendarDays,
   ChevronDown
 } from 'lucide-react';
+import logoImg from '../3.png';
 
 // Define the shape of a job item in the live interactive mockup
 interface JobItem {
@@ -103,7 +104,7 @@ export default function DeviceMockup() {
   return (
     <div 
       id="device-pc-mockup-frame" 
-      className="relative w-full aspect-square max-w-[560px] sm:max-w-[580px] lg:max-w-[620px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex transition-all duration-300 hover:shadow-brand-orange-500/10 hover:border-white/15"
+      className="relative w-full aspect-[1.55] max-w-[720px] sm:max-w-[780px] lg:max-w-[850px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex transition-all duration-300 hover:shadow-brand-orange-500/10 hover:border-white/15"
     >
       {/* Background orange laser glow inside the frame */}
       <div className="absolute inset-0 -m-8 bg-brand-orange-500/[0.03] blur-[80px] rounded-full pointer-events-none" />
@@ -113,13 +114,14 @@ export default function DeviceMockup() {
         
         {/* Brand Header */}
         <div className="space-y-4">
-          <div className="flex items-center gap-1.5 px-1 py-1">
-            {/* Custom power/bolt circle icon matching real image */}
-            <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full border border-brand-orange-400 flex items-center justify-center shrink-0">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-orange-400" />
-            </div>
-            <span className="font-extrabold tracking-tight text-white leading-none font-sans hidden xs:inline truncate">
-              meuprocesso<span className="text-brand-orange-400">.com</span>
+          <div className="flex items-center select-none -ml-1.5 sm:-ml-2 px-1 py-1">
+            <img 
+              src={logoImg} 
+              alt="Logo" 
+              className="h-9 sm:h-11 w-auto object-contain shrink-0 relative z-0" 
+            />
+            <span className="-ml-5 sm:-ml-6.5 relative z-10 font-extrabold tracking-tight text-white leading-none font-sans text-[7.5px] xs:text-[9.5px] sm:text-[10.5px] md:text-[11px] flex items-center">
+              meuprocessoseletivo<span className="text-brand-orange-400">.com</span>
             </span>
           </div>
 

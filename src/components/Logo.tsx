@@ -32,8 +32,8 @@ export default function Logo({ className = '', size = 'md' }: LogoProps) {
   const isCentered = className.includes('mx-auto');
   const containerMarginMap = {
     sm: isCentered ? '' : '-ml-2 sm:-ml-3',
-    md: isCentered ? '' : '-ml-6 sm:-ml-8 md:-ml-10 lg:-ml-11',
-    lg: isCentered ? '' : '-ml-9 sm:-ml-11 md:-ml-13 lg:-ml-15',
+    md: isCentered ? '' : '-ml-8 sm:-ml-10 md:-ml-12 lg:-ml-13',
+    lg: isCentered ? '' : '-ml-11 sm:-ml-13 md:-ml-15 lg:-ml-17',
   };
 
   const appliedMargin = containerMarginMap[size] || '';
