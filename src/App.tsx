@@ -152,18 +152,15 @@ export default function App() {
 
       {/* Navigation Header */}
       <header id="main-navigation-navbar" className="sticky top-0 z-40 w-full bg-[#0E0D14] transition-colors duration-300">
-        <div className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between relative">
+        <div className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 h-24 flex items-center justify-between relative">
           <Logo size="md" />
 
           {/* Desktop Nav Links & Actions (Aligned Right) */}
-          <div className="hidden md:flex items-center gap-14">
-            <nav className="flex items-center gap-12 mr-8">
+          <div className="hidden md:flex items-center">
+            <nav className="flex items-center gap-10">
               <a href="#solucoes" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
               <a href="#recursos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
               <a href="#precos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Preços</a>
-            </nav>
-
-            <div className="flex items-center gap-10">
               <button 
                 type="button" 
                 onClick={() => setIsLoginModalOpen(true)}
@@ -174,11 +171,11 @@ export default function App() {
               <button 
                 type="button"
                 onClick={() => setIsInterestModalOpen(true)}
-                className="bg-brand-gradient text-white text-[16px] font-bold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/15 active:scale-95 transition-all cursor-pointer"
+                className="bg-brand-gradient text-white text-[16px] font-bold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/15 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
               >
                 Contate-nos
               </button>
-            </div>
+            </nav>
           </div>
 
           {/* Mobile hamburger menu toggle */}
@@ -224,20 +221,20 @@ export default function App() {
       </AnimatePresence>
 
       {/* Main Elements Scroll Grid */}
-      <main className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 space-y-36 lg:space-y-48 pb-24">
+      <main className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 space-y-36 lg:space-y-48 pb-24">
 
         {/* HERO SECTION - Matching Image 1 split screen template */}
-        <section id="hero-sec" className="min-h-[calc(100vh-110px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center lg:mb-16">
+        <section id="hero-sec" className="min-h-[calc(100vh-110px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-center lg:mb-16">
           
           <div className="lg:col-span-6 space-y-10">
             <div className="space-y-6">
-              <h1 className="text-[30px] xs:text-[36px] sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight text-white leading-tight lg:leading-[1.1] font-sans">
+              <h1 className="text-[34px] xs:text-[42px] sm:text-6xl lg:text-[64px] xl:text-[76px] font-extrabold tracking-tight text-white leading-[1.08] font-sans">
                 Contrate melhor.<br />
                 Mais rápido.<br />
                 <span className="text-white whitespace-nowrap">Com menos esforço.</span>
               </h1>
               
-              <p className="text-sm sm:text-base lg:text-[18px] text-brand-gray/90 max-w-xl leading-relaxed pt-2">
+              <p className="text-base sm:text-lg lg:text-[21px] text-brand-gray/90 max-w-2xl leading-relaxed pt-2">
                 Automatize seu processo seletivo e encontre os melhores talentos para sua empresa.
               </p>
             </div>

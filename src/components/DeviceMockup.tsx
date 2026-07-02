@@ -114,13 +114,13 @@ export default function DeviceMockup() {
         
         {/* Brand Header */}
         <div className="space-y-4">
-          <div className="flex items-center select-none -ml-3.5 sm:-ml-5 lg:-ml-5.5 px-1 py-1">
+          <div className="flex items-center select-none -ml-1 sm:-ml-1.5 px-1 py-1 gap-1 sm:gap-1.5">
             <img 
               src={logoImg} 
               alt="Logo" 
-              className="h-10 sm:h-13 w-auto object-contain shrink-0 relative z-0" 
+              className="h-5 sm:h-7 w-auto object-contain shrink-0 relative z-0" 
             />
-            <span className="-ml-3.5 sm:-ml-4.5 lg:-ml-5 relative z-10 font-extrabold tracking-tight text-white leading-none font-sans text-[8.5px] xs:text-[10px] sm:text-[11.5px] md:text-[12px] flex items-center whitespace-nowrap">
+            <span className="relative z-10 font-extrabold tracking-tight text-white leading-none font-sans text-[8.5px] xs:text-[10px] sm:text-[11.5px] md:text-[12px] flex items-center whitespace-nowrap">
               meuprocessoseletivo<span className="text-brand-orange-400">.com</span>
             </span>
           </div>
