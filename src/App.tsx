@@ -11,14 +11,13 @@ import {
   Menu, 
   X, 
   ChevronRight,
-  Sparkles,
+  UserCheck,
   PlusCircle,
   Users
 } from 'lucide-react';
 
 import Logo from './components/Logo';
 import DeviceMockup from './components/DeviceMockup';
-import FeatureBento from './components/FeatureBento';
 import FAQAccordion from './components/FAQAccordion';
 import RecruiterDashboardMockup from './components/RecruiterDashboardMockup';
 import ProductDashboardMockup from './components/ProductDashboardMockup';
@@ -130,7 +129,7 @@ export default function App() {
           <div className="hidden md:flex items-center">
             <nav className="flex items-center gap-10">
               <a href="#solucoes" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
-              <a href="#recursos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
+              <a href="#produtos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
               <a href="#precos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Preços</a>
               <button 
                 type="button" 
@@ -170,7 +169,7 @@ export default function App() {
             className="md:hidden fixed inset-x-0 top-24 bg-[#0E0D14]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
           >
             <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Soluções</a>
-            <a href="#recursos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
+            <a href="#produtos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
             <a href="#precos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Preços</a>
             <div className="w-full h-[1px] bg-white/5 my-2" />
             <button 
@@ -257,14 +256,22 @@ export default function App() {
                 </span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-white leading-[1.15]">
+              <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.1] lg:leading-[1.1]">
                 Da vaga publicada <br />
                 <span className="text-brand-gradient">ao candidato ideal.</span>
               </h2>
               
-              <p className="text-sm sm:text-base text-brand-gray/90 leading-relaxed max-w-md">
-                Organize o processo seletivo em uma plataforma simples, clara e feita para empresas que levam contratação a sério.
-              </p>
+              <div className="space-y-4">
+                <p className="text-base sm:text-lg text-brand-gray/90 leading-relaxed font-semibold">
+                  Organize o processo seletivo em uma plataforma simples, clara e feita para empresas que levam contratações a sério.
+                </p>
+                <p className="text-sm sm:text-base text-brand-gray/70 leading-relaxed">
+                  Elimine de vez as planilhas manuais, e-mails soltos e mensagens desencontradas de candidatos. O nosso sistema centraliza todas as candidaturas recebidas de forma instantânea, permitindo o acompanhamento visual do funil de recrutamento de ponta a ponta em uma única tela.
+                </p>
+                <p className="text-sm sm:text-base text-brand-gray/70 leading-relaxed">
+                  Com links de candidatura exclusivos por processo seletivo e um painel de triagem desenhado para alta performance, você ganha velocidade incomparável na avaliação técnica e comportamental, focando seu tempo e energia na escolha dos melhores profissionais do mercado.
+                </p>
+              </div>
             </div>
 
             {/* Right Column: High Fidelity Desktop Mockup */}
@@ -374,7 +381,7 @@ export default function App() {
                     desc: "Cadastre vagas com dados essenciais, requisitos e preferências."
                   },
                   {
-                    icon: <Sparkles className="w-5 h-5 text-brand-orange-400" />,
+                    icon: <UserCheck className="w-5 h-5 text-brand-orange-400" />,
                     title: "Triagem inteligente",
                     desc: "O sistema analisa currículos e organiza candidatos por compatibilidade."
                   },
@@ -422,36 +429,35 @@ export default function App() {
           </div>
         </section>
 
-        {/* BENTO GRID: Core Features Section */}
-        <section id="recursos" className="space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block">Destaques do Sistema</span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-              Recrute e qualifique <span className="text-brand-gradient">com agilidade integrada</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-brand-gray leading-relaxed max-w-xl mx-auto">
-              Experimente a produtividade simplificada. Nosso sistema online concentra todas as requisições de vagas, ranqueamento de candidatos e painéis rápidos de controle no seu navegador.
-            </p>
-          </div>
-
-          <FeatureBento />
-        </section>
-
         {/* SECTION: Planos e Preços */}
-        <section id="precos" className="space-y-12 py-12 border-t border-white/5 relative z-10">
+        <section id="precos" className="space-y-16 py-16 border-t border-white/5 relative z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-orange-500/2 to-transparent pointer-events-none" />
           
-          <div className="text-center max-w-2xl mx-auto space-y-4">
-            <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block">INVESTIMENTO INTELIGENTE</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Planos Simples e Transparentes</h2>
-            <p className="text-xs sm:text-sm text-brand-gray leading-relaxed max-w-lg mx-auto">Encontre a modalidade perfeita para a sua escala de contratações. Mude de plano a qualquer momento.</p>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block">Tabela Geral de Preços</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              Planos simples para contratar com clareza.
+            </h2>
             
+            {/* Campanha Anual Banner */}
+            <div className="inline-flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 bg-brand-orange-500/10 border border-brand-orange-500/20 px-6 py-3.5 rounded-2xl max-w-xl mx-auto mt-4 text-left">
+              <span className="bg-brand-gradient text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0">
+                Campanha Anual
+              </span>
+              <div>
+                <p className="text-xs sm:text-sm font-bold text-white">Pague 10 meses e use por 12.</p>
+                <p className="text-[10px] sm:text-xs text-brand-gray/90 mt-0.5">
+                  Na assinatura anual, você economiza 16,67% em relação ao pagamento mensal por 12 meses.
+                </p>
+              </div>
+            </div>
+
             {/* Beautiful Billing Cycle Toggle */}
-            <div className="flex items-center justify-center gap-3 pt-4 select-none">
+            <div className="flex items-center justify-center gap-3 pt-6 select-none">
               <button
                 type="button"
                 onClick={() => setBillingCycle('mensal')}
-                className={`px-4.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold cursor-pointer transition-all ${
                   billingCycle === 'mensal' 
                     ? 'bg-white/10 text-white shadow-inner border border-white/10' 
                     : 'text-brand-gray hover:text-white'
@@ -460,71 +466,79 @@ export default function App() {
                 Cobrança Mensal
               </button>
               
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setBillingCycle('anual')}
-                  className={`px-4.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all flex items-center gap-1.5 ${
-                    billingCycle === 'anual' 
-                      ? 'bg-brand-gradient text-white shadow-lg' 
-                      : 'text-brand-gray hover:text-white'
-                  }`}
-                >
-                  Cobrança Anual
-                  <span className="bg-white/20 text-[9px] px-1.5 py-0.5 rounded-full font-bold text-white tracking-wide">
-                    Até R$ 39/m de desconto
-                  </span>
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setBillingCycle('anual')}
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold cursor-pointer transition-all flex items-center gap-1.5 ${
+                  billingCycle === 'anual' 
+                    ? 'bg-brand-gradient text-white shadow-lg shadow-brand-orange-500/15' 
+                    : 'text-brand-gray hover:text-white'
+                }`}
+              >
+                Cobrança Anual
+                <span className="bg-white/20 text-[9px] px-2 py-0.5 rounded-full font-bold text-white tracking-wide">
+                  Economize 16.67%
+                </span>
+              </button>
             </div>
           </div>
 
           {/* 4 pricing cards layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {/* Card 1: Plano Base */}
+            
+            {/* Card 1: Inicial */}
             <div className="bg-[#16161B] border border-white/5 p-6 rounded-2xl flex flex-col justify-between hover:border-white/10 transition-all duration-300 relative group">
               <div className="space-y-4">
                 <div>
-                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block">Ideal para começar</span>
-                  <h4 className="text-lg font-bold text-white mt-1">Plano Base</h4>
-                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Estrutura básica de painéis de seleção para pequenas empresas.</p>
+                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block">Entrada acessível</span>
+                  <h4 className="text-lg font-bold text-white mt-1">Inicial</h4>
+                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Estrutura básica para começar a recrutar com eficiência.</p>
                 </div>
                 
                 <div className="py-2">
                   <div className="flex items-baseline gap-1">
                     <span className="text-xs text-brand-gray font-semibold">R$</span>
                     <span className="text-3xl font-extrabold text-white transition-all">
-                      {billingCycle === 'mensal' ? '32,00' : '29,90'}
+                      {billingCycle === 'mensal' ? '39,90' : '33,25'}
                     </span>
                     <span className="text-[10px] text-brand-gray">/ {billingCycle === 'mensal' ? 'mês' : 'mês no anual'}</span>
                   </div>
-                  {billingCycle === 'anual' && (
-                    <span className="text-[10px] text-emerald-400 font-semibold block mt-1">Economia de R$ 25,20 por ano</span>
+                  {billingCycle === 'anual' ? (
+                    <div className="space-y-0.5 text-[10px] text-brand-gray block mt-1">
+                      <p className="font-semibold text-emerald-400">Economia de R$ 79,80 por ano</p>
+                      <p className="text-brand-gray/50">Cobrado anualmente: R$ 399,00/ano</p>
+                    </div>
+                  ) : (
+                    <p className="text-[10px] text-brand-gray/50 block mt-1">Cobrado mensalmente</p>
                   )}
                 </div>
 
                 <div className="w-full h-[1px] bg-white/5" />
                 
-                <ul className="space-y-2 text-xs text-brand-gray leading-relaxed">
+                <ul className="space-y-2.5 text-xs text-brand-gray leading-relaxed">
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span><strong>1</strong> conta de recrutador integrada</span>
+                    <span><strong>1</strong> processo seletivo ativo</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Até <strong>5</strong> vagas ativas simultâneas</span>
+                    <span>Link de candidatura</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Triagem básica no painel de seleção</span>
+                    <span>Recebimento de currículos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Download de relatórios básicos</span>
+                    <span>Currículos centralizados</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Suporte em horário comercial</span>
+                    <span>Ranking por compatibilidade</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
+                    <span>Suporte padrão</span>
                   </li>
                 </ul>
               </div>
@@ -538,50 +552,59 @@ export default function App() {
               </button>
             </div>
 
-            {/* Card 2: Plano Avançado */}
+            {/* Card 2: Essencial */}
             <div className="bg-[#16161B] border border-white/5 p-6 rounded-2xl flex flex-col justify-between hover:border-white/10 transition-all duration-300 relative group">
               <div className="space-y-4">
                 <div>
-                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block">Contratação ágil</span>
-                  <h4 className="text-lg font-bold text-white mt-1">Plano Avançado</h4>
-                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Automatize respostas e organize pipelines em equipe integrada.</p>
+                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block text-brand-orange-300">Batata média</span>
+                  <h4 className="text-lg font-bold text-white mt-1">Essencial</h4>
+                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">A ponte de valor ideal para crescer suas equipes com suporte integrado.</p>
                 </div>
                 
                 <div className="py-2">
                   <div className="flex items-baseline gap-1">
                     <span className="text-xs text-brand-gray font-semibold">R$</span>
                     <span className="text-3xl font-extrabold text-white transition-all">
-                      {billingCycle === 'mensal' ? '57,90' : '49,90'}
+                      {billingCycle === 'mensal' ? '59,90' : '49,92'}
                     </span>
                     <span className="text-[10px] text-brand-gray">/ {billingCycle === 'mensal' ? 'mês' : 'mês no anual'}</span>
                   </div>
-                  {billingCycle === 'anual' && (
-                    <span className="text-[10px] text-emerald-400 font-semibold block mt-1">Economia de R$ 96,00 por ano</span>
+                  {billingCycle === 'anual' ? (
+                    <div className="space-y-0.5 text-[10px] text-brand-gray block mt-1">
+                      <p className="font-semibold text-emerald-400">Economia de R$ 119,80 por ano</p>
+                      <p className="text-brand-gray/50">Cobrado anualmente: R$ 599,00/ano</p>
+                    </div>
+                  ) : (
+                    <p className="text-[10px] text-brand-gray/50 block mt-1">Cobrado mensalmente</p>
                   )}
                 </div>
 
                 <div className="w-full h-[1px] bg-white/5" />
                 
-                <ul className="space-y-2 text-xs text-brand-gray leading-relaxed">
+                <ul className="space-y-2.5 text-xs text-brand-gray leading-relaxed">
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Até <strong>3</strong> contas de recrutador</span>
+                    <span>Até <strong>4</strong> processos seletivos ativos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Até <strong>15</strong> vagas ativas simultâneas</span>
+                    <span>Links de candidatura por processo</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Kanban completo e fluxo interativo</span>
+                    <span>Recebimento de currículos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Integração com portais de recrutamento</span>
+                    <span>Currículos centralizados</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Disparo automatizado de alertas de vagas</span>
+                    <span>Ranking por compatibilidade</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
+                    <span>Suporte padrão</span>
                   </li>
                 </ul>
               </div>
@@ -595,54 +618,67 @@ export default function App() {
               </button>
             </div>
 
-            {/* Card 3: Plano Premium (Recommended Accent) */}
-            <div className="bg-[#1A1A22] border-2 border-brand-orange-500/40 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-orange-500/60 transition-all duration-300 relative group shadow-xl shadow-brand-orange-500/5">
-              <div className="absolute top-0 right-0 bg-[#FF8A00] text-black text-[9px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+            {/* Card 3: Avançado (Recommended Highlight) */}
+            <div className="bg-[#1A1A22] border-2 border-brand-orange-500/50 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-orange-500/70 transition-all duration-300 relative group shadow-xl shadow-brand-orange-500/5">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#FF8A00] text-black text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                 Recomendado
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-4 pt-1">
                 <div>
-                  <span className="text-[9px] font-bold text-brand-orange-400 uppercase tracking-wider block">Eficiência completa de RH</span>
-                  <h4 className="text-lg font-bold text-white mt-1">Plano Premium</h4>
-                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Ideal para times de recursos humanos que precisam de análise de IA para triagem.</p>
+                  <span className="text-[9px] font-bold text-brand-orange-400 uppercase tracking-wider block">Melhor Custo-Benefício</span>
+                  <h4 className="text-lg font-bold text-white mt-1">Avançado</h4>
+                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Para corporações dinâmicas que buscam velocidade e triagem otimizada.</p>
                 </div>
                 
                 <div className="py-2">
                   <div className="flex items-baseline gap-1">
                     <span className="text-xs text-brand-gray font-semibold">R$</span>
                     <span className="text-3xl font-extrabold text-white transition-all">
-                      {billingCycle === 'mensal' ? '129,90' : '112,90'}
+                      {billingCycle === 'mensal' ? '129,90' : '108,25'}
                     </span>
                     <span className="text-[10px] text-brand-gray">/ {billingCycle === 'mensal' ? 'mês' : 'mês no anual'}</span>
                   </div>
-                  {billingCycle === 'anual' && (
-                    <span className="text-[10px] text-emerald-400 font-semibold block mt-1">Economia de R$ 204,00 por ano</span>
+                  {billingCycle === 'anual' ? (
+                    <div className="space-y-0.5 text-[10px] text-brand-gray block mt-1">
+                      <p className="font-semibold text-emerald-400">Economia de R$ 259,80 por ano</p>
+                      <p className="text-brand-gray/50">Cobrado anualmente: R$ 1.299,00/ano</p>
+                    </div>
+                  ) : (
+                    <p className="text-[10px] text-brand-gray/50 block mt-1">Cobrado mensalmente</p>
                   )}
                 </div>
 
                 <div className="w-full h-[1px] bg-white/10" />
                 
-                <ul className="space-y-2 text-xs text-white/90 leading-relaxed">
+                <ul className="space-y-2.5 text-xs text-white/90 leading-relaxed">
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
-                    <span>Contas e vagas <strong>ilimitadas</strong></span>
+                    <span>Até <strong>20</strong> processos seletivos ativos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
-                    <span><strong>Selo de Triagem com IA integrado</strong></span>
+                    <span>Links de candidatura por processo</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
-                    <span>Métricas de BI dinâmicas e desempenho</span>
+                    <span>Recebimento de currículos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
-                    <span>Agendamento inteligente compartilhado</span>
+                    <span>Currículos centralizados</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
-                    <span>Suporte dedicado prioritário 24/7</span>
+                    <span>Ranking por compatibilidade</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
+                    <span>Atendimento prioritário</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-[#FFAE2B] shrink-0 mt-0.5" />
+                    <span><strong>Melhor custo por processo ativo</strong></span>
                   </li>
                 </ul>
               </div>
@@ -656,50 +692,63 @@ export default function App() {
               </button>
             </div>
 
-            {/* Card 4: Plano Master */}
+            {/* Card 4: Profissional */}
             <div className="bg-[#16161B] border border-white/5 p-6 rounded-2xl flex flex-col justify-between hover:border-white/10 transition-all duration-300 relative group">
               <div className="space-y-4">
                 <div>
-                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block">Grandes corporações</span>
-                  <h4 className="text-lg font-bold text-white mt-1">Plano Master</h4>
-                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Relatórios personalizados sob demanda, Whitelabel e governança.</p>
+                  <span className="text-[9px] font-bold text-brand-gray/60 uppercase tracking-wider block">Alto volume</span>
+                  <h4 className="text-lg font-bold text-white mt-1">Profissional</h4>
+                  <p className="text-xs text-brand-gray leading-relaxed mt-1.5">Governança absoluta e suporte robusto para escala industrial de admissões.</p>
                 </div>
                 
                 <div className="py-2">
                   <div className="flex items-baseline gap-1">
                     <span className="text-xs text-brand-gray font-semibold">R$</span>
                     <span className="text-3xl font-extrabold text-white transition-all">
-                      {billingCycle === 'mensal' ? '459,90' : '420,90'}
+                      {billingCycle === 'mensal' ? '499,90' : '416,58'}
                     </span>
                     <span className="text-[10px] text-brand-gray">/ {billingCycle === 'mensal' ? 'mês' : 'mês no anual'}</span>
                   </div>
-                  {billingCycle === 'anual' && (
-                    <span className="text-[10px] text-emerald-400 font-semibold block mt-1">Economia de R$ 468,00 por ano</span>
+                  {billingCycle === 'anual' ? (
+                    <div className="space-y-0.5 text-[10px] text-brand-gray block mt-1">
+                      <p className="font-semibold text-emerald-400">Economia de R$ 999,80 por ano</p>
+                      <p className="text-brand-gray/50">Cobrado anualmente: R$ 4.999,00/ano</p>
+                    </div>
+                  ) : (
+                    <p className="text-[10px] text-brand-gray/50 block mt-1">Cobrado mensalmente</p>
                   )}
                 </div>
 
                 <div className="w-full h-[1px] bg-white/5" />
                 
-                <ul className="space-y-2 text-xs text-brand-gray leading-relaxed">
+                <ul className="space-y-2.5 text-xs text-brand-gray leading-relaxed">
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Whitelabel exclusivo (custom branding)</span>
+                    <span>Até <strong>150</strong> processos seletivos ativos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Ambiente integrado dedicado na nuvem</span>
+                    <span>Links de candidatura por processo</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Suporte via telefone & WhatsApp do gerente</span>
+                    <span>Recebimento de currículos</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Apoio de segurança específico & LGPD</span>
+                    <span>Currículos centralizados</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
-                    <span>Treinamento trimestral para o time</span>
+                    <span>Ranking por compatibilidade</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
+                    <span>Atendimento prioritário</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-400/80 shrink-0 mt-0.5" />
+                    <span>Alto volume de processos simultâneos</span>
                   </li>
                 </ul>
               </div>
@@ -711,6 +760,26 @@ export default function App() {
               >
                 Contate-nos
               </button>
+            </div>
+          </div>
+
+          {/* DETAILED INFORMATION AND CONDITIONS AT THE BOTTOM - Support block only */}
+          <div className="pt-12 border-t border-white/5 space-y-10">
+            {/* Custom support personalized block */}
+            <div className="bg-[#121118]/40 border border-white/5 rounded-2xl p-6 text-center max-w-4xl mx-auto space-y-3.5">
+              <h5 className="text-sm font-bold text-white tracking-tight">Precisa de suporte personalizado ou integração dedicada com sistemas internos?</h5>
+              <p className="text-xs text-brand-gray/90 max-w-2xl mx-auto leading-relaxed">
+                Nosso time comercial está disponível para modelar planos personalizados de volume sob demanda para corporações de grande porte que requeiram whitelabel completo, segurança governamental de dados ou treinamento trimestral dedicado. Fale conosco a qualquer momento!
+              </p>
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={() => setIsInterestModalOpen(true)}
+                  className="bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2 px-6 rounded-xl transition-all cursor-pointer"
+                >
+                  Entrar em contato com especialistas
+                </button>
+              </div>
             </div>
           </div>
         </section>

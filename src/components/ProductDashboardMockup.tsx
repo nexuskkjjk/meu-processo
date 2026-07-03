@@ -184,7 +184,7 @@ export default function ProductDashboardMockup() {
               <div className="space-y-0.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <h4 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 tracking-tight">
+                  <h4 className="text-[11px] sm:text-[13px] font-bold text-slate-800 tracking-tight">
                     Analista de Marketing Pleno
                   </h4>
                 </div>

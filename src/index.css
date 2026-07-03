@@ -43,3 +43,23 @@
   background: #3A3A47;
 }
 
+/* Eliminate default outlines or tap highlight colors on any components or wrappers on click/focus */
+*,
+*:focus,
+*:active,
+*:focus-visible,
+#device-pc-mockup-frame,
+#device-pc-mockup-frame * {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+button:focus,
+input:focus,
+select:focus,
+div:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
