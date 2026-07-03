@@ -9,61 +9,61 @@ import {
   Search, 
   ChevronDown, 
   LogOut, 
-  Eye,
+  ChevronRight,
   FileText
 } from 'lucide-react';
 
-export default function RecruiterDashboardMockup() {
+export default function ProductDashboardMockup() {
   const candidates = [
     {
       pos: '01',
+      name: 'Mariana Costa',
+      location: 'São Paulo, SP',
+      compat: '96%',
+      compatVal: 96,
+      status: 'Entrevista',
+      statusClass: 'bg-indigo-50 text-indigo-700 border border-indigo-100',
+      img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&fit=crop&q=80',
+    },
+    {
+      pos: '02',
       name: 'Lucas Ferreira',
-      role: 'Desenvolvedor Frontend Sênior',
-      compat: '94%',
-      compatVal: 94,
-      status: 'Em entrevista',
+      location: 'São Paulo, SP',
+      compat: '92%',
+      compatVal: 92,
+      status: 'Entrevista',
       statusClass: 'bg-indigo-50 text-indigo-700 border border-indigo-100',
       img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&fit=crop&q=80',
     },
     {
-      pos: '02',
-      name: 'Mariana Costa',
-      role: 'Desenvolvedor Frontend Sênior',
-      compat: '90%',
-      compatVal: 90,
+      pos: '03',
+      name: 'Beatriz Almeida',
+      location: 'Campinas, SP',
+      compat: '88%',
+      compatVal: 88,
       status: 'Em análise',
       statusClass: 'bg-amber-50 text-amber-700 border border-amber-100',
-      img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&fit=crop&q=80',
-    },
-    {
-      pos: '03',
-      name: 'Rafael Almeida',
-      role: 'Desenvolvedor Frontend Sênior',
-      compat: '87%',
-      compatVal: 87,
-      status: 'Entrevista',
-      statusClass: 'bg-indigo-50 text-indigo-700 border border-indigo-100',
-      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&fit=crop&q=80',
-    },
-    {
-      pos: '04',
-      name: 'Camila Martins',
-      role: 'Desenvolvedor Frontend Sênior',
-      compat: '84%',
-      compatVal: 84,
-      status: 'Entrevista',
-      statusClass: 'bg-indigo-50 text-indigo-700 border border-indigo-100',
       img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&fit=crop&q=80',
     },
     {
-      pos: '05',
-      name: 'Bruno Martins',
-      role: 'Desenvolvedor Frontend Sênior',
-      compat: '78%',
-      compatVal: 78,
+      pos: '04',
+      name: 'Rafael Mendes',
+      location: 'São Paulo, SP',
+      compat: '81%',
+      compatVal: 81,
       status: 'Triagem',
       statusClass: 'bg-slate-50 text-slate-700 border border-slate-100',
-      img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&fit=crop&q=80',
+      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&fit=crop&q=80',
+    },
+    {
+      pos: '05',
+      name: 'Juliana Rocha',
+      location: 'Santos, SP',
+      compat: '76%',
+      compatVal: 76,
+      status: 'Triagem',
+      statusClass: 'bg-slate-50 text-slate-700 border border-slate-100',
+      img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&fit=crop&q=80',
     }
   ];
 
@@ -77,11 +77,11 @@ export default function RecruiterDashboardMockup() {
           <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
         </div>
         <div className="bg-[#111015]/80 text-[10px] text-brand-gray/60 px-4 py-1 rounded-md mx-auto w-64 text-center truncate border border-white/5">
-          meuprocessoseletivo.com/vagas/10245
+          meuprocessoseletivo.com/vagas/12458
         </div>
       </div>
 
-      <div className="flex h-[420px] sm:h-[480px] text-xs">
+      <div className="flex h-[440px] sm:h-[500px] text-xs">
         {/* SIDEBAR (Dark Theme) */}
         <div className="w-40 sm:w-48 bg-[#0D0C11] p-3 flex flex-col justify-between border-r border-white/5 shrink-0">
           <div className="space-y-5">
@@ -178,19 +178,19 @@ export default function RecruiterDashboardMockup() {
           </div>
 
           {/* Body Content */}
-          <div className="flex-1 py-3 flex flex-col justify-between overflow-hidden gap-3">
+          <div className="flex-1 py-2 sm:py-3 flex flex-col justify-between overflow-hidden gap-2 sm:gap-3">
             {/* Title & action */}
             <div className="flex items-center justify-between shrink-0">
               <div className="space-y-0.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   <h4 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 tracking-tight">
-                    Desenvolvedor Frontend Sênior
+                    Analista de Marketing Pleno
                   </h4>
                 </div>
                 <div className="flex items-center gap-1 text-[8px] sm:text-[9px] text-slate-400">
                   <FileText className="w-2.5 h-2.5" />
-                  <span>ID da vaga: 10245</span>
+                  <span>ID da vaga: 12458</span>
                 </div>
               </div>
               <button 
@@ -204,10 +204,10 @@ export default function RecruiterDashboardMockup() {
             {/* Metrics Row */}
             <div className="grid grid-cols-4 gap-2 shrink-0">
               {[
-                { count: '42', label: 'Total candidatos' },
-                { count: '18', label: 'Em análise' },
-                { count: '6', label: 'Entrevista' },
-                { count: '3', label: 'Contratados' }
+                { count: '58', label: 'Total candidatos' },
+                { count: '21', label: 'Em triagem' },
+                { count: '12', label: 'Entrevistas' },
+                { count: '5', label: 'Contratados' }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white border border-slate-100 rounded-lg p-1.5 sm:p-2 text-center shadow-xs">
                   <div className="text-[13px] sm:text-[15px] font-extrabold text-slate-800 leading-tight">
@@ -220,6 +220,15 @@ export default function RecruiterDashboardMockup() {
               ))}
             </div>
 
+            {/* Interactive Mockup Tabs (Matching the image) */}
+            <div className="flex gap-4 border-b border-slate-100 px-1 shrink-0 select-none text-[9px] sm:text-[10px] font-medium text-slate-400">
+              <span className="pb-1 cursor-pointer">Resumo</span>
+              <span className="pb-1 cursor-pointer text-brand-orange-500 border-b border-brand-orange-500 font-semibold">Candidatos</span>
+              <span className="pb-1 cursor-pointer">Etapas</span>
+              <span className="pb-1 cursor-pointer">Avaliações</span>
+              <span className="pb-1 cursor-pointer">Atividades</span>
+            </div>
+
             {/* Table Area */}
             <div className="bg-white border border-slate-100 rounded-xl flex-1 flex flex-col overflow-hidden shadow-xs">
               <div className="p-2 border-b border-slate-50 flex items-center justify-between shrink-0">
@@ -227,9 +236,10 @@ export default function RecruiterDashboardMockup() {
                   <span className="text-[10px] font-bold text-slate-800 block">Ranking de candidatos</span>
                   <span className="text-[8px] text-slate-400 block">Ordenado por compatibilidade com a vaga</span>
                 </div>
-                <span className="text-[8px] sm:text-[9px] font-semibold text-slate-400 hover:text-slate-600 transition-colors cursor-pointer">
-                  Ver todos
-                </span>
+                <div className="flex items-center gap-1 border border-slate-100 rounded-md px-1.5 py-0.5 bg-slate-50 text-[8px] text-slate-500 cursor-pointer">
+                  <span>Todos os candidatos</span>
+                  <ChevronDown className="w-2.5 h-2.5" />
+                </div>
               </div>
 
               {/* Candidates Grid/Rows */}
@@ -262,7 +272,7 @@ export default function RecruiterDashboardMockup() {
                           {cand.name}
                         </span>
                         <span className="text-[7.5px] text-slate-400 block truncate leading-tight">
-                          {cand.role}
+                          {cand.location}
                         </span>
                       </div>
                     </div>
@@ -306,6 +316,14 @@ export default function RecruiterDashboardMockup() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* View all candidates footer trigger */}
+              <div className="p-2 border-t border-slate-50 bg-slate-50/40 flex items-center justify-between shrink-0">
+                <button type="button" className="text-[8.5px] font-semibold text-brand-orange-500 hover:text-brand-orange-600 transition-colors flex items-center gap-0.5">
+                  <span>Ver todos os candidatos</span>
+                  <ChevronRight className="w-3 h-3" />
+                </button>
               </div>
             </div>
           </div>

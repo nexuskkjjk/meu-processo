@@ -10,7 +10,10 @@ import {
   Check, 
   Menu, 
   X, 
-  ChevronRight
+  ChevronRight,
+  Sparkles,
+  PlusCircle,
+  Users
 } from 'lucide-react';
 
 import Logo from './components/Logo';
@@ -18,6 +21,7 @@ import DeviceMockup from './components/DeviceMockup';
 import FeatureBento from './components/FeatureBento';
 import FAQAccordion from './components/FAQAccordion';
 import RecruiterDashboardMockup from './components/RecruiterDashboardMockup';
+import ProductDashboardMockup from './components/ProductDashboardMockup';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -242,8 +246,6 @@ export default function App() {
 
         {/* SOLUTIONS SECTION - Da vaga publicada ao candidato ideal (matching second image) */}
         <section id="solucoes" className="space-y-16 py-8 relative">
-          {/* Subtle glow background */}
-          <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-orange-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Solution info */}
@@ -331,6 +333,91 @@ export default function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PRODUCTS SECTION - Ferramentas para contratar com mais controle (inverted section matching second image) */}
+        <section id="produtos" className="space-y-16 py-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Column: High Fidelity Desktop Mockup (ProductDashboardMockup) */}
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <ProductDashboardMockup />
+            </div>
+
+            {/* Right Column: Product info */}
+            <div className="lg:col-span-5 space-y-8 order-1 lg:order-2">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 animate-pulse" />
+                  <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest">
+                    PRODUTOS
+                  </span>
+                </div>
+                
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-white leading-[1.15]">
+                  Ferramentas para <br />
+                  <span className="text-brand-gradient">contratar com mais controle.</span>
+                </h2>
+                
+                <p className="text-sm sm:text-base text-brand-gray/90 leading-relaxed max-w-md">
+                  Tudo que sua empresa precisa para criar processos, organizar candidatos e tomar decisões com mais clareza.
+                </p>
+              </div>
+
+              {/* Three detailed features boxes with custom orange outline icons */}
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: <PlusCircle className="w-5 h-5 text-brand-orange-400" />,
+                    title: "Criação de processos",
+                    desc: "Cadastre vagas com dados essenciais, requisitos e preferências."
+                  },
+                  {
+                    icon: <Sparkles className="w-5 h-5 text-brand-orange-400" />,
+                    title: "Triagem inteligente",
+                    desc: "O sistema analisa currículos e organiza candidatos por compatibilidade."
+                  },
+                  {
+                    icon: <Users className="w-5 h-5 text-brand-orange-400" />,
+                    title: "Gestão dos candidatos",
+                    desc: "Acompanhe currículos, entrevistas, status e informações importantes em um só lugar."
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4 p-4 rounded-xl border border-white/5 bg-[#121118]/40 hover:border-brand-orange-500/10 hover:bg-[#15141D]/55 transition-all text-left">
+                    <div className="w-10 h-10 rounded-lg bg-brand-orange-500/10 border border-brand-orange-500/20 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                      {item.icon}
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-bold text-white tracking-tight">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-brand-gray/80 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom footer note & button */}
+              <div className="space-y-4 pt-2 text-left">
+                <p className="text-xs text-brand-gray font-medium">
+                  Menos trabalho manual. Mais clareza para decidir.
+                </p>
+                <button 
+                  onClick={() => {
+                    const precosSection = document.getElementById('precos');
+                    if (precosSection) {
+                      precosSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="bg-brand-gradient hover:opacity-95 text-white text-xs font-bold py-3 px-6 rounded-xl transition-all hover:scale-102 active:scale-98 cursor-pointer flex items-center gap-1.5 shadow-lg shadow-brand-orange-500/15"
+                >
+                  <span>Conhecer planos</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
