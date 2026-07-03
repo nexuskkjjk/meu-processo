@@ -103,7 +103,7 @@ export default function DeviceMockup() {
   return (
     <div 
       id="device-pc-mockup-frame" 
-      className="relative w-full aspect-[1.55] max-w-[720px] sm:max-w-[840px] md:max-w-[940px] lg:max-w-[1040px] xl:max-w-[1150px] 2xl:max-w-[1250px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex transition-all duration-300 hover:shadow-white/5 hover:border-white/15 outline-none focus:outline-none active:outline-none focus-visible:outline-none"
+      className="relative w-full aspect-[1.55] max-w-[720px] sm:max-w-[840px] md:max-w-[940px] lg:max-w-[1040px] xl:max-w-[1150px] 2xl:max-w-[1250px] mx-auto select-none rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden bg-[#0A090F] flex outline-none focus:outline-none active:outline-none focus-visible:outline-none"
     >
       {/* 1. DARK SIDEBAR (Left side, 31% of square width) */}
       <aside className="w-[31%] bg-[#0B0A11] border-r border-white/5 flex flex-col justify-between p-2.5 sm:p-4 text-[9px] sm:text-[11px] text-[#86858E] shrink-0 z-10">

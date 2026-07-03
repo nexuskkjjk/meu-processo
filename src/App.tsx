@@ -213,7 +213,12 @@ export default function App() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
               <button 
                 type="button"
-                onClick={() => setIsInterestModalOpen(true)}
+                onClick={() => {
+                  const precosSection = document.getElementById('precos');
+                  if (precosSection) {
+                    precosSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="bg-brand-gradient text-white text-base sm:text-lg font-bold py-4 px-10 rounded-2xl hover:shadow-2xl hover:shadow-brand-orange-500/25 hover:scale-[1.02] active:scale-98 transition-all flex items-center justify-center cursor-pointer text-center"
               >
                 Começar agora
@@ -229,8 +234,6 @@ export default function App() {
 
         {/* IMPACT SLOGAN BANNER - Frase de efeito requested by user */}
         <section id="slogan-impacto" className="relative py-12 md:py-16 overflow-hidden">
-          {/* Ambient glowing orb in the background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-brand-orange-500/[0.04] blur-[100px] rounded-full pointer-events-none" />
           
           <div className="relative max-w-5xl mx-auto px-6 text-center space-y-6">
             <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block animate-pulse">A FORÇA DO SEU TIME COMEÇA AQUI</span>
@@ -261,15 +264,12 @@ export default function App() {
                 <span className="text-brand-gradient">ao candidato ideal.</span>
               </h2>
               
-              <div className="space-y-4">
-                <p className="text-base sm:text-lg text-brand-gray/90 leading-relaxed font-semibold">
+              <div className="space-y-4 max-w-lg">
+                <p className="text-base sm:text-lg text-brand-gray/90 leading-relaxed font-medium">
                   Organize o processo seletivo em uma plataforma simples, clara e feita para empresas que levam contratações a sério.
                 </p>
                 <p className="text-sm sm:text-base text-brand-gray/70 leading-relaxed">
                   Elimine de vez as planilhas manuais, e-mails soltos e mensagens desencontradas de candidatos. O nosso sistema centraliza todas as candidaturas recebidas de forma instantânea, permitindo o acompanhamento visual do funil de recrutamento de ponta a ponta em uma única tela.
-                </p>
-                <p className="text-sm sm:text-base text-brand-gray/70 leading-relaxed">
-                  Com links de candidatura exclusivos por processo seletivo e um painel de triagem desenhado para alta performance, você ganha velocidade incomparável na avaliação técnica e comportamental, focando seu tempo e energia na escolha dos melhores profissionais do mercado.
                 </p>
               </div>
             </div>
@@ -431,7 +431,6 @@ export default function App() {
 
         {/* SECTION: Planos e Preços */}
         <section id="precos" className="space-y-16 py-16 border-t border-white/5 relative z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-orange-500/2 to-transparent pointer-events-none" />
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block">Tabela Geral de Preços</span>
@@ -760,26 +759,6 @@ export default function App() {
               >
                 Contate-nos
               </button>
-            </div>
-          </div>
-
-          {/* DETAILED INFORMATION AND CONDITIONS AT THE BOTTOM - Support block only */}
-          <div className="pt-12 border-t border-white/5 space-y-10">
-            {/* Custom support personalized block */}
-            <div className="bg-[#121118]/40 border border-white/5 rounded-2xl p-6 text-center max-w-4xl mx-auto space-y-3.5">
-              <h5 className="text-sm font-bold text-white tracking-tight">Precisa de suporte personalizado ou integração dedicada com sistemas internos?</h5>
-              <p className="text-xs text-brand-gray/90 max-w-2xl mx-auto leading-relaxed">
-                Nosso time comercial está disponível para modelar planos personalizados de volume sob demanda para corporações de grande porte que requeiram whitelabel completo, segurança governamental de dados ou treinamento trimestral dedicado. Fale conosco a qualquer momento!
-              </p>
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={() => setIsInterestModalOpen(true)}
-                  className="bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2 px-6 rounded-xl transition-all cursor-pointer"
-                >
-                  Entrar em contato com especialistas
-                </button>
-              </div>
             </div>
           </div>
         </section>

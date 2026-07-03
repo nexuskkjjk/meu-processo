@@ -87,11 +87,13 @@ export default function ProductDashboardMockup() {
           <div className="space-y-5">
             {/* Logo area */}
             <div className="flex items-center gap-1.5 px-1 py-1">
-              <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-brand-orange-600 to-amber-500 flex items-center justify-center">
-                <Clock className="w-3 h-3 text-white" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="h-5 sm:h-6 w-auto object-contain shrink-0 relative z-0" 
+              />
               <span className="font-extrabold text-[10px] tracking-tight text-white">
-                meuprocesso<span className="text-brand-orange-400">seletivo.com</span>
+                meuprocessoseletivo<span className="text-brand-orange-400">.com</span>
               </span>
             </div>
 
