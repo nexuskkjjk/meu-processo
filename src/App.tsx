@@ -17,6 +17,7 @@ import Logo from './components/Logo';
 import DeviceMockup from './components/DeviceMockup';
 import FeatureBento from './components/FeatureBento';
 import FAQAccordion from './components/FAQAccordion';
+import RecruiterDashboardMockup from './components/RecruiterDashboardMockup';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,19 +58,6 @@ export default function App() {
       clearTimeout(t2);
     };
   }, []);
-
-  const PROFILES_BENEFITS = {
-    recrutadores: [
-      { id: 1, title: 'Triagem Portátil Inteligente', text: 'Analise candidatos de qualquer lugar direto na tela do seu celular Android.' },
-      { id: 2, title: 'Notificações Push Instantâneas', text: 'Seja avisado sobre novos matches de candidatos e notas de testes na hora.' },
-      { id: 3, title: 'Kanban Dedicado Touch', text: 'Arraste e solte com o dedo para mover candidatos de fases nativamente.' },
-    ],
-    candidatos: [
-      { id: 1, title: 'Acompanhamento Portátil', text: 'Atualizações rápidas do status de aplicação e feedbacks diretos no celular.' },
-      { id: 2, title: 'Testes Otimizados para Celular', text: 'Responda questionários técnicos diretamente no navegador do smartphone sem complicações.' },
-      { id: 3, title: 'Agendamentos Rápidos', text: 'Selecione e sincronize horários de entrevistas virtuais com um simples toque.' },
-    ]
-  };
 
   return (
     <div className="min-h-screen bg-[#0E0D14] text-white font-sans antialiased selection:bg-brand-orange-500/30 selection:text-white relative overflow-x-hidden">
@@ -236,62 +224,113 @@ export default function App() {
           </div>
         </section>
 
-        {/* PROOF SECTION: Brand Identity graphics & Logos matching Image 3 */}
-        <section id="solucoes" className="py-12 bg-transparent">
-          <div className="text-center max-w-xl mx-auto space-y-2 mb-10">
-            <h2 className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest">A Revolução do Recrutamento Online</h2>
-            <p className="text-xl lg:text-2xl font-bold tracking-tight text-white">Disponível em Qualquer Dispositivo</p>
-            <p className="text-xs text-brand-gray">Nossa tecnologia empodera recrutadores, gestores e candidatos com inteligência de ponta a ponta, reduzindo drasticamente o tempo offline.</p>
+        {/* IMPACT SLOGAN BANNER - Frase de efeito requested by user */}
+        <section id="slogan-impacto" className="relative py-12 md:py-16 overflow-hidden">
+          {/* Ambient glowing orb in the background */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-brand-orange-500/[0.04] blur-[100px] rounded-full pointer-events-none" />
+          
+          <div className="relative max-w-5xl mx-auto px-6 text-center space-y-6">
+            <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest block animate-pulse">A FORÇA DO SEU TIME COMEÇA AQUI</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans">
+              "O talento certo transforma tudo. Seu processo seletivo rápido, <span className="text-brand-gradient">assertivo e inteligente</span>."
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-brand-gray/80 max-w-3xl mx-auto leading-relaxed">
+              Elimine a burocracia do RH de ponta a ponta. Automatize a triagem, engaje seus candidatos e tome decisões baseadas em dados com a plataforma mais ágil do mercado.
+            </p>
           </div>
+        </section>
 
-          {/* Split profile view (Recrutadores vs Candidatos) */}
-          <div className="flex flex-col gap-8 max-w-4xl mx-auto">
-            {/* Tab Swappers */}
-            <div className="flex justify-center border-b border-white/5 p-1 max-w-sm mx-auto w-full bg-[#1A1A1F] rounded-xl self-center">
-              <button 
-                onClick={() => setActiveTab('recrutadores')}
-                className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-                  activeTab === 'recrutadores' 
-                    ? 'bg-brand-gradient text-white shadow-md' 
-                    : 'text-brand-gray hover:text-white'
-                }`}
-              >
-                Para Recrutadores (RH)
-              </button>
-              <button 
-                onClick={() => setActiveTab('candidatos')}
-                className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-                  activeTab === 'candidatos' 
-                    ? 'bg-brand-gradient text-white shadow-md' 
-                    : 'text-brand-gray hover:text-white'
-                }`}
-              >
-                Para Candidatos
-              </button>
+        {/* SOLUTIONS SECTION - Da vaga publicada ao candidato ideal (matching second image) */}
+        <section id="solucoes" className="space-y-16 py-8 relative">
+          {/* Subtle glow background */}
+          <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-orange-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Column: Solution info */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 animate-pulse" />
+                <span className="text-[11px] font-bold text-[#FFAE2B] uppercase tracking-widest">
+                  SOLUÇÕES
+                </span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-white leading-[1.15]">
+                Da vaga publicada <br />
+                <span className="text-brand-gradient">ao candidato ideal.</span>
+              </h2>
+              
+              <p className="text-sm sm:text-base text-brand-gray/90 leading-relaxed max-w-md">
+                Organize o processo seletivo em uma plataforma simples, clara e feita para empresas que levam contratação a sério.
+              </p>
             </div>
 
-            {/* Tab content view with cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4.5">
-              <AnimatePresence mode="wait">
-                {PROFILES_BENEFITS[activeTab].map((benefit, index) => (
-                  <motion.div 
-                    key={benefit.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2, delay: index * 0.08 }}
-                    className="bg-[#1A1A1F] p-5.5 rounded-2xl border border-white/5 hover:border-brand-orange-500/10 transition-colors flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="w-8 h-8 rounded-lg bg-brand-orange-500/5 border border-brand-orange-500/15 flex items-center justify-center text-brand-orange-400 mb-3 text-xs font-bold font-sans">
-                        0{index + 1}
+            {/* Right Column: High Fidelity Desktop Mockup */}
+            <div className="lg:col-span-7">
+              <RecruiterDashboardMockup />
+            </div>
+          </div>
+
+          {/* Bottom Process Flow Grid - 01 to 04 connected by lines with arrows */}
+          <div className="pt-10 border-t border-white/5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 relative">
+              {[
+                {
+                  num: '01',
+                  title: 'Crie a vaga',
+                  desc: 'Defina cargo, empresa, modalidade e requisitos.'
+                },
+                {
+                  num: '02',
+                  title: 'Compartilhe o link',
+                  desc: 'Divulgue a vaga e receba candidaturas em um só lugar.'
+                },
+                {
+                  num: '03',
+                  title: 'Receba os currículos',
+                  desc: 'Centralize os envios sem depender de planilhas ou mensagens soltas.'
+                },
+                {
+                  num: '04',
+                  title: 'Veja o ranking',
+                  desc: 'Compare os candidatos com mais compatibilidade.'
+                }
+              ].map((step, sIdx) => (
+                <div key={sIdx} className="relative group space-y-3.5">
+                  {/* Step Header with connected lines */}
+                  <div className="flex items-center gap-4 relative">
+                    <span className="text-sm font-mono font-extrabold text-[#FFAE2B] bg-brand-orange-500/10 px-2.5 py-1 rounded-md border border-brand-orange-500/20 shadow-sm">
+                      {step.num}
+                    </span>
+
+                    {/* Horizontal connecting line (hidden on mobile/tablet) */}
+                    {sIdx < 3 ? (
+                      <div className="hidden md:block absolute left-14 right-0 top-1/2 -translate-y-1/2 h-[1px]">
+                        <div className="w-full h-full bg-gradient-to-r from-brand-orange-500/40 to-brand-orange-500/10 relative">
+                          {/* Arrow pointer icon */}
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 border-t border-r border-brand-orange-500/60 rotate-45" />
+                        </div>
                       </div>
-                      <h4 className="text-sm font-bold text-white mb-1">{benefit.title}</h4>
-                      <p className="text-[11px] leading-relaxed text-brand-gray">{benefit.text}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+                    ) : (
+                      <div className="hidden md:block absolute left-14 right-4 top-1/2 -translate-y-1/2 h-[1px]">
+                        <div className="w-full h-full bg-gradient-to-r from-brand-orange-500/40 to-transparent relative">
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-orange-500/30" />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Step Title & Details */}
+                  <div className="space-y-1.5">
+                    <h4 className="text-sm font-bold text-white group-hover:text-brand-orange-400 transition-colors">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs text-brand-gray/80 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
