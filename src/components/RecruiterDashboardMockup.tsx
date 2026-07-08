@@ -83,7 +83,7 @@ export default function RecruiterDashboardMockup() {
 
       <div className="flex h-[420px] sm:h-[480px] text-xs">
         {/* SIDEBAR (Dark Theme) */}
-        <div className="w-40 sm:w-48 bg-[#0D0C11] p-3 flex flex-col justify-between border-r border-white/5 shrink-0">
+        <div className="hidden sm:flex w-40 sm:w-48 bg-[#0D0C11] p-3 flex-col justify-between border-r border-white/5 shrink-0">
           <div className="space-y-5">
             {/* Logo area */}
             <div className="flex items-center gap-1.5 px-1 py-1">

@@ -29,6 +29,10 @@ export default function App() {
   const [interestEmail, setInterestEmail] = useState('');
   const [showInterestToast, setShowInterestToast] = useState(false);
   
+  // Payment and Plan selections
+  const [selectedPlan, setSelectedPlan] = useState<'Inicial' | 'Essencial' | 'Avançado' | 'Profissional'>('Avançado');
+  const [paymentMethod, setPaymentMethod] = useState<'googlepay' | 'pix' | 'credit' | 'boleto'>('pix');
+  
   // Billing cycle state: 'mensal' or 'anual'
   const [billingCycle, setBillingCycle] = useState<'mensal' | 'anual'>('mensal');
   
@@ -126,7 +130,7 @@ export default function App() {
           <Logo size="md" />
 
           {/* Desktop Nav Links & Actions (Aligned Right) */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <nav className="flex items-center gap-10">
               <a href="#solucoes" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Soluções</a>
               <a href="#produtos" className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors">Produtos</a>
@@ -152,7 +156,7 @@ export default function App() {
           <button 
             type="button" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-            className="md:hidden p-1.5 text-brand-gray hover:text-white transition-colors animate-none"
+            className="lg:hidden p-1.5 text-brand-gray hover:text-white transition-colors animate-none"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -166,7 +170,7 @@ export default function App() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden fixed inset-x-0 top-24 bg-[#0E0D14]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
+            className="lg:hidden fixed inset-x-0 top-24 bg-[#0E0D14]/95 backdrop-blur-lg border-b border-white/5 z-30 py-6 px-4 space-y-4 flex flex-col items-center text-center shadow-2xl overflow-y-auto max-h-[80vh]"
           >
             <a href="#solucoes" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Soluções</a>
             <a href="#produtos" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-bold text-brand-gray hover:text-white transition-colors block py-2 w-full">Produtos</a>
@@ -193,15 +197,20 @@ export default function App() {
       {/* Main Elements Scroll Grid */}
       <main className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 space-y-36 lg:space-y-48 pb-24">
 
-        {/* HERO SECTION - Matching Image 1 split screen template */}
+         {/* HERO SECTION - Matching Image 1 split screen template */}
         <section id="hero-sec" className="min-h-[calc(100vh-110px)] py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-center lg:mb-16">
           
           <div className="lg:col-span-6 space-y-10">
             <div className="space-y-6">
-              <h1 className="text-[34px] xs:text-[42px] sm:text-6xl lg:text-[64px] xl:text-[76px] font-extrabold tracking-tight text-white leading-[1.08] font-sans">
+              {/* BRAND TAGLINE SLOGAN WORDPLAY */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-orange-500/10 border border-brand-orange-500/20 rounded-full text-[10px] sm:text-[11px] font-bold text-[#FFAE2B] uppercase tracking-wider mb-2 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FFAE2B] animate-pulse shrink-0" />
+                <span>No seu recrutamento, você precisa ser seletivo.</span>
+              </div>
+              <h1 className="text-[28px] xs:text-[36px] sm:text-[46px] md:text-[54px] lg:text-[64px] xl:text-[76px] font-extrabold tracking-tight text-white leading-[1.1] font-sans">
                 Contrate melhor.<br />
                 Mais rápido.<br />
-                <span className="text-white whitespace-nowrap">Com menos esforço.</span>
+                <span className="text-white sm:whitespace-nowrap">Com menos esforço.</span>
               </h1>
               
               <p className="text-base sm:text-lg lg:text-[21px] text-brand-gray/90 max-w-2xl leading-relaxed pt-2">
@@ -544,7 +553,10 @@ export default function App() {
 
               <button
                 type="button"
-                onClick={() => setIsInterestModalOpen(true)}
+                onClick={() => {
+                  setSelectedPlan('Inicial');
+                  setIsInterestModalOpen(true);
+                }}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
                 Começar agora
@@ -610,7 +622,10 @@ export default function App() {
 
               <button
                 type="button"
-                onClick={() => setIsInterestModalOpen(true)}
+                onClick={() => {
+                  setSelectedPlan('Essencial');
+                  setIsInterestModalOpen(true);
+                }}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
                 Começar agora
@@ -684,7 +699,10 @@ export default function App() {
 
               <button
                 type="button"
-                onClick={() => setIsInterestModalOpen(true)}
+                onClick={() => {
+                  setSelectedPlan('Avançado');
+                  setIsInterestModalOpen(true);
+                }}
                 className="w-full mt-6 bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-xl hover:shadow-lg hover:shadow-brand-orange-500/10 active:scale-98 transition-all text-center cursor-pointer"
               >
                 Começar agora
@@ -754,7 +772,10 @@ export default function App() {
 
               <button
                 type="button"
-                onClick={() => setIsInterestModalOpen(true)}
+                onClick={() => {
+                  setSelectedPlan('Profissional');
+                  setIsInterestModalOpen(true);
+                }}
                 className="w-full mt-6 bg-white/5 text-white hover:bg-white/10 text-xs font-bold py-2.5 rounded-xl transition-all text-center cursor-pointer"
               >
                 Contate-nos
@@ -813,7 +834,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-sm bg-[#16161B] border border-white/10 rounded-2xl p-6 shadow-2xl z-10"
+              className="relative w-full max-w-md bg-[#16161B] border border-white/10 rounded-2xl p-6 shadow-2xl z-10"
             >
               {/* Close Button */}
               <button 
@@ -825,17 +846,41 @@ export default function App() {
               </button>
 
               <div className="space-y-4">
-               <div className="text-center">
-                  <Logo size="md" className="mx-auto mb-2" />
-                  <h3 className="text-base font-bold text-white">Contate-nos</h3>
-                  <p className="text-[11px] text-brand-gray mt-1">Informe seu e-mail corporativo para entrarmos em contato.</p>
+                <div className="text-center">
+                  <Logo size="md" className="mx-auto mb-1" />
+                  <h3 className="text-base font-bold text-white">Assinar Plano {selectedPlan}</h3>
+                  <p className="text-[11px] text-brand-gray mt-0.5">Configure sua assinatura e método de pagamento.</p>
+                </div>
+
+                {/* Selected Plan Summary Card */}
+                <div className="bg-[#1C1C24] border border-white/5 rounded-xl p-3 flex items-center justify-between">
+                  <div>
+                    <p className="text-[10px] font-bold text-brand-orange-400 uppercase tracking-wider">Plano Escolhido</p>
+                    <p className="text-xs font-bold text-white mt-0.5">{selectedPlan} • {billingCycle === 'mensal' ? 'Mensal' : 'Anual'}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs font-black text-white">
+                      {selectedPlan === 'Inicial' && (billingCycle === 'mensal' ? 'R$ 39,90/mês' : 'R$ 33,25/mês')}
+                      {selectedPlan === 'Essencial' && (billingCycle === 'mensal' ? 'R$ 59,90/mês' : 'R$ 49,92/mês')}
+                      {selectedPlan === 'Avançado' && (billingCycle === 'mensal' ? 'R$ 129,90/mês' : 'R$ 108,25/mês')}
+                      {selectedPlan === 'Profissional' && (billingCycle === 'mensal' ? 'R$ 499,90/mês' : 'R$ 416,58/mês')}
+                    </p>
+                    {billingCycle === 'anual' && (
+                      <p className="text-[8px] text-brand-gray/60 mt-0.5">
+                        Cobrado anualmente ({selectedPlan === 'Inicial' && 'R$ 399,00'}
+                        {selectedPlan === 'Essencial' && 'R$ 599,00'}
+                        {selectedPlan === 'Avançado' && 'R$ 1.299,00'}
+                        {selectedPlan === 'Profissional' && 'R$ 4.999,00'})
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <form 
                   onSubmit={(e) => {
                     e.preventDefault();
                     setShowInterestToast(true);
-                    setTimeout(() => setShowInterestToast(false), 4000);
+                    setTimeout(() => setShowInterestToast(false), 5000);
                     setIsInterestModalOpen(false);
                   }}
                   className="space-y-3.5"
@@ -843,21 +888,128 @@ export default function App() {
                   <div className="space-y-1.5">
                     <label className="text-[9px] font-bold text-white uppercase tracking-wider block">E-mail Corporativo</label>
                     <input 
-                      type="email"
-                      required
-                      placeholder="exemplo@empresa.com"
-                      value={interestEmail}
-                      onChange={(e) => setInterestEmail(e.target.value)}
-                      className="w-full bg-[#0E0D14] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
+                       type="email"
+                       required
+                       placeholder="exemplo@empresa.com"
+                       value={interestEmail}
+                       onChange={(e) => setInterestEmail(e.target.value)}
+                       className="w-full bg-[#0E0D14] border border-white/10 focus:border-brand-orange-500/40 text-xs text-white rounded-xl py-2 px-3 focus:outline-none"
                     />
                   </div>
 
-                  <button 
-                    type="submit"
-                    className="w-full bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-xl hover:opacity-95 active:scale-98 transition-all cursor-pointer shadow-md mt-2"
-                  >
-                    Confirmar contato
-                  </button>
+                  {/* Payment Method Selector */}
+                  <div className="space-y-2">
+                    <label className="text-[9px] font-bold text-white uppercase tracking-wider block">Método de Pagamento</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {/* Pix Card */}
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('pix')}
+                        className={`p-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 select-none cursor-pointer ${
+                          paymentMethod === 'pix' 
+                            ? 'bg-[#FFAE2B]/10 border-[#FFAE2B] text-white' 
+                            : 'bg-[#1C1C24] border-white/5 text-brand-gray hover:text-white'
+                        }`}
+                      >
+                        <span className="text-xs">⚡</span>
+                        <span className="text-[8.5px] font-bold block leading-none">Pix</span>
+                        <span className="text-[6.5px] text-brand-gray/60 leading-none">Instantâneo</span>
+                      </button>
+
+                      {/* Google Pay Card */}
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('googlepay')}
+                        className={`p-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 select-none cursor-pointer ${
+                          paymentMethod === 'googlepay' 
+                            ? 'bg-[#FFAE2B]/10 border-[#FFAE2B] text-white' 
+                            : 'bg-[#1C1C24] border-white/5 text-brand-gray hover:text-white'
+                        }`}
+                      >
+                        <span className="text-xs">📱</span>
+                        <span className="text-[8.5px] font-bold block leading-none">Google Pay</span>
+                        <span className="text-[6.5px] text-brand-gray/60 leading-none">Um Clique</span>
+                      </button>
+
+                      {/* Credit Card Card */}
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('credit')}
+                        className={`p-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 select-none cursor-pointer ${
+                          paymentMethod === 'credit' 
+                            ? 'bg-[#FFAE2B]/10 border-[#FFAE2B] text-white' 
+                            : 'bg-[#1C1C24] border-white/5 text-brand-gray hover:text-white'
+                        }`}
+                      >
+                        <span className="text-xs">💳</span>
+                        <span className="text-[8.5px] font-bold block leading-none">Cartão</span>
+                        <span className="text-[6.5px] text-brand-gray/60 leading-none font-sans">Crédito</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Conditional payment feedback layout */}
+                  <div className="bg-[#0E0D14] border border-white/5 rounded-xl p-2.5 text-[9px] text-brand-gray leading-normal space-y-1">
+                    {paymentMethod === 'pix' && (
+                      <p>✨ <strong>Pix Selecionado:</strong> Uma chave Pix copia-e-cola e o QR Code de faturamento serão gerados instantaneamente assim que você clicar no botão abaixo.</p>
+                    )}
+                    {paymentMethod === 'googlepay' && (
+                      <div>
+                        <p className="mb-2">🔒 <strong>Google Pay Selecionado:</strong> Pague de forma rápida e segura utilizando os cartões salvos na sua conta Google.</p>
+                        {/* Official Styled simulated Google Pay Button */}
+                        <button
+                          type="submit"
+                          className="w-full flex items-center gap-1 bg-black text-white py-2 px-3 rounded-lg justify-center font-bold font-sans text-[11px] hover:bg-zinc-900 border border-zinc-800 transition-all select-none cursor-pointer shadow-sm active:scale-98"
+                        >
+                          <span className="opacity-90 font-medium">Pagar com</span>
+                          <span className="text-white font-extrabold flex items-center gap-0.5">
+                            <span className="text-[#4285F4]">G</span>
+                            <span className="text-[#EA4335]">o</span>
+                             <span className="text-[#FBBC05]">o</span>
+                            <span className="text-[#4285F4]">g</span>
+                            <span className="text-[#34A853]">l</span>
+                            <span className="text-[#EA4335]">e</span>
+                            <span className="ml-0.5 text-white font-semibold">Pay</span>
+                          </span>
+                        </button>
+                      </div>
+                    )}
+                    {paymentMethod === 'credit' && (
+                      <div className="space-y-1.5 pt-0.5">
+                        <p>💳 <strong>Cartão de Crédito Selecionado:</strong> Insira os dados abaixo para faturamento automático.</p>
+                        <div className="grid grid-cols-2 gap-1.5">
+                          <input
+                            type="text"
+                            placeholder="Número do Cartão"
+                            maxLength={19}
+                            className="col-span-2 w-full bg-[#16161B] border border-white/10 text-[9px] text-white rounded-lg p-1.5 focus:outline-none"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Validade (MM/AA)"
+                            maxLength={5}
+                            className="w-full bg-[#16161B] border border-white/10 text-[9px] text-white rounded-lg p-1.5 focus:outline-none"
+                          />
+                          <input
+                            type="text"
+                            placeholder="CVC"
+                            maxLength={4}
+                            className="w-full bg-[#16161B] border border-white/10 text-[9px] text-white rounded-lg p-1.5 focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Render Submit Button if not using the custom GPay layout button as action */}
+                  {paymentMethod !== 'googlepay' && (
+                    <button 
+                      type="submit"
+                      className="w-full bg-brand-gradient text-white text-xs font-bold py-2.5 rounded-xl hover:opacity-95 active:scale-98 transition-all cursor-pointer shadow-md mt-2"
+                    >
+                      Confirmar assinatura do Plano {selectedPlan}
+                    </button>
+                  )}
                 </form>
               </div>
             </motion.div>
@@ -947,11 +1099,13 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Demonstration Success Dynamic Toast */}
+       {/* Demonstration Success Dynamic Toast */}
       {showInterestToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#16161B] border border-green-500/30 text-white px-4.5 py-3 rounded-xl shadow-xl flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-semibold">Contato solicitado com sucesso para: <strong className="text-brand-orange-400">{interestEmail || 'seu e-mail'}</strong>!</span>
+        <div className="fixed bottom-6 right-6 z-50 bg-[#16161B] border border-green-500/30 text-white px-4.5 py-3 rounded-xl shadow-xl flex items-center gap-3 max-w-sm md:max-w-md">
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shrink-0" />
+          <span className="text-xs font-semibold leading-normal">
+            Assinatura do <strong className="text-white">Plano {selectedPlan}</strong> ({billingCycle === 'mensal' ? 'Mensal' : 'Anual'}) iniciada com sucesso via <strong className="text-brand-orange-400 capitalize">{paymentMethod === 'googlepay' ? 'Google Pay' : paymentMethod === 'credit' ? 'Cartão de Crédito' : paymentMethod}</strong> para <strong className="text-brand-orange-400">{interestEmail || 'seu e-mail'}</strong>! Enviamos o faturamento de confirmação para sua caixa de entrada.
+          </span>
         </div>
       )}
 

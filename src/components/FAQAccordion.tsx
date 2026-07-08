@@ -9,28 +9,52 @@ interface FAQItem {
 
 const FAQ_DATA: FAQItem[] = [
   {
-    question: "Como funciona a triagem baseada no Selo de Triagem Inteligente?",
-    answer: "Nossa tecnologia analisa o currículo enviado pelo candidato em tempo real, cruzando as competências do arquivo com os requisitos de formação, experiência e descrição da vaga cadastrados por você. Em segundos, o sistema gera uma pontuação de match de 0 a 100 exibida diretamente na sua tela, destacando os pontos fortes e fracos de cada perfil de forma resumida e organizada de maneira visual."
+    question: "O que é o Meu Processo Seletivo?",
+    answer: "O Meu Processo Seletivo é uma plataforma para criar processos seletivos, receber currículos por link, centralizar candidatos e visualizar um ranking de compatibilidade para facilitar a triagem."
   },
   {
-    question: "Posso mudar de plano ou cancelar minha assinatura a qualquer momento?",
-    answer: "Sim, absolutamente! Nossos planos não têm período mínimo de fidelidade no faturamento mensal. Você pode fazer o upgrade, downgrade ou cancelar seu plano a qualquer momento diretamente pela área de faturamento no menu do seu painel e as mudanças serão aplicadas no ciclo de cobrança subsequente."
+    question: "Como funciona o processo seletivo?",
+    answer: "Você cria uma vaga, gera um link de candidatura e compartilha com os candidatos. Os currículos recebidos ficam organizados dentro da plataforma, permitindo acompanhar cada processo de forma mais clara."
   },
   {
-    question: "Como posso simular e agendar uma demonstração (demo) de teste?",
-    answer: "É simples: clique em qualquer botão de 'Demonstração' ou 'Agendar demonstração demo' no nosso site e preencha o seu e-mail corporativo. Nossa equipe fará contato imediatamente para demonstrar a plataforma e fornecer um ambiente simulador de testes grátis configurado especialmente com a identidade da sua marca."
+    question: "O candidato precisa criar conta para se candidatar?",
+    answer: "Não necessariamente. O candidato pode acessar o link de candidatura, preencher as informações solicitadas e enviar o currículo de forma simples."
   },
   {
-    question: "A plataforma está em conformidade estrita com a LGPD?",
-    answer: "Sim, a segurança dos dados de recrutadores e candidatos é nossa prioridade máxima. Toda a nossa infraestrutura na nuvem está em perfeita conformidade estrita com as normas brasileiras da LGPD (Lei Geral de Proteção de Dados - Lei nº 13.709/2018), com criptografia de ponta a ponta em trânsito e em repouso dos dados profissionais sensíveis."
+    question: "O que significa \"processos seletivos ativos\"?",
+    answer: "Processos seletivos ativos são vagas ou seleções abertas ao mesmo tempo dentro da plataforma. Cada plano possui um limite de processos ativos simultaneamente."
   },
   {
-    question: "O que é a funcionalidade de Whitelabel do Plano Master?",
-    answer: "A funcionalidade Whitelabel permite remover o logo e referências aos nossos sistemas e aplicar 100% da identidade visual própria da sua marca no portal de cadastro de vagas, nos e-mails disparados aos candidatos e no link de testes, mantendo a experiência do candidato totalmente integrada ao design e branding oficial da sua corporação."
+    question: "Quantos currículos posso receber?",
+    answer: "Os planos são organizados principalmente pela quantidade de processos seletivos ativos. A proposta é permitir que sua empresa receba os currículos dentro dos processos criados e mantenha tudo centralizado."
   },
   {
-    question: "É possível integrar a plataforma com nossos sistemas atuais de RH (ATS)?",
-    answer: "Nos planos Premium e Master oferecemos suporte técnico de engenharia para desenvolvimento de APIs customizadas de sincronia. É possível integrar o banco de dados de candidaturas diretamente de ponta a ponta com as principais plataformas do mercado e exportar relatórios inteligentes sob demanda corporativa."
+    question: "Como funciona o ranking por compatibilidade?",
+    answer: "O sistema organiza os candidatos de acordo com a compatibilidade entre o currículo recebido e as informações cadastradas na vaga, ajudando a empresa a visualizar perfis com mais clareza."
+  },
+  {
+    question: "O sistema escolhe o candidato automaticamente?",
+    answer: "Não. A plataforma ajuda na triagem e organização dos candidatos, mas a decisão final continua sendo da empresa."
+  },
+  {
+    question: "Posso mudar de plano depois?",
+    answer: "Sim. A empresa pode começar em um plano menor e evoluir conforme a demanda por processos seletivos aumentar."
+  },
+  {
+    question: "Como funciona a assinatura anual?",
+    answer: "Na assinatura anual, a campanha é: pague 10 meses e use por 12. Isso representa um desconto de 16,67% em comparação ao pagamento mensal durante 12 meses."
+  },
+  {
+    question: "Qual plano devo escolher?",
+    answer: "O plano deve ser escolhido conforme a quantidade de processos seletivos que sua empresa precisa manter ativos ao mesmo tempo: Inicial: 1 processo ativo; Essencial: até 4 processos ativos; Avançado: até 20 processos ativos; Profissional: até 150 processos ativos."
+  },
+  {
+    question: "Posso cancelar a assinatura?",
+    answer: "Sim. O cliente pode cancelar a assinatura conforme as condições contratadas no momento da adesão."
+  },
+  {
+    question: "O suporte está incluso?",
+    answer: "Sim. Todos os planos possuem suporte. Os planos Avançado e Profissional contam com atendimento prioritário."
   }
 ];
 

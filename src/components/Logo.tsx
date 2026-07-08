@@ -7,23 +7,24 @@ interface LogoProps {
 
 export default function Logo({ className = '', size = 'md' }: LogoProps) {
   // Balanced middle-ground sizes: smaller than before, larger than original
+  // Fully responsive mapping to prevent clipping and overflow on mobile and tablet, while keeping PC sizes untouched!
   const iconHeightMap = {
-    sm: 'h-6 sm:h-7',
-    md: 'h-8 sm:h-9.5 md:h-10.5',
-    lg: 'h-14 sm:h-16 md:h-19',
+    sm: 'h-5 xs:h-6 lg:h-7',
+    md: 'h-6 xs:h-7.5 sm:h-8.5 md:h-9 lg:h-10.5',
+    lg: 'h-10 xs:h-12 sm:h-14 lg:h-19',
   };
 
   const textHeightMap = {
-    sm: 'text-sm sm:text-base',
-    md: 'text-base sm:text-[19px] md:text-[21px]',
-    lg: 'text-xl sm:text-2xl md:text-3xl',
+    sm: 'text-[11px] xs:text-sm lg:text-base',
+    md: 'text-[13px] xs:text-[15px] sm:text-[18px] md:text-[19px] lg:text-[21px]',
+    lg: 'text-base xs:text-xl sm:text-2xl lg:text-3xl',
   };
 
   // Positive gap/margin now because the new logo has NO transparent padding!
   const overlapMap = {
-    sm: 'ml-1.5 sm:ml-2',
-    md: 'ml-2 sm:ml-2.5 md:ml-3',
-    lg: 'ml-3 sm:ml-3.5 md:ml-4',
+    sm: 'ml-1 xs:ml-1.5 lg:ml-2',
+    md: 'ml-1.5 xs:ml-2 sm:ml-2.5 lg:ml-3',
+    lg: 'ml-2 xs:ml-3 sm:ml-3.5 lg:ml-4',
   };
 
   // Since there is no longer any massive transparent padding, we do NOT need negative margins
